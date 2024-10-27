@@ -66,4 +66,4 @@ if __name__ == "__main__":
     # convert_to_webp('path/to/image.jpg')
     
     # Example usage for bulk conversion
-    bulk_convert_to_webp('../public/images/alumni', '../public/images/alumni')
+    bulk_convert_to_webp('../public/images/team', '../public/images/team')
