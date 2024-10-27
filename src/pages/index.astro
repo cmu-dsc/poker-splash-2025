@@ -128,65 +128,31 @@ import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 				<div class="prize-content">
 					<h2>Prize Pool</h2>
 					<div class="prize-box" id="prize-box">
-						<div class="prize-amount">$100,000</div>
+						<div class="prize-amount">
+							$<span id="prize-value">100,000</span>
+						</div>
 						<div class="total-text">Total Prize Pool</div>
 					</div>
 					<div class="additional-prize">
 						Plus recruiting opportunities at Jump Trading
 					</div>
+					<div id="slot-machine" style="display: none;">
+						<div class="slot-cost">Cost per spin: $1</div>
+						<div class="slot-machine-container">
+							<div class="slot-display">🎰 🎰 🎰</div>
+							<div class="lever-container">
+								<div class="lever">
+									<div class="lever-ball"></div>
+									<div class="lever-stick"></div>
+									<div class="lever-base"></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<script is:inline>
-					document.addEventListener("DOMContentLoaded", () => {
-						const prizeBox = document.getElementById("prize-box");
-						const moneySymbols = ["💵", "💰", "💸", "$"];
-
-						function createMoneyParticle(x, y) {
-							const particle = document.createElement("div");
-							particle.className = "money-particle";
-							particle.textContent =
-								moneySymbols[Math.floor(Math.random() * moneySymbols.length)];
-
-							// Calculate random angle and distance
-							const angle = Math.random() * Math.PI * 2;
-							const distance = 100 + Math.random() * 100; // Increased distance
-
-							// Calculate movement
-							const xMove = Math.cos(angle) * distance;
-							const yMove = Math.sin(angle) * distance;
-							const rotation = Math.random() * 360;
-
-							// Set CSS variables for the animation
-							particle.style.setProperty("--x-move", `${xMove}px`);
-							particle.style.setProperty("--y-move", `${yMove}px`);
-							particle.style.setProperty("--rotation", `${rotation}deg`);
-
-							// Set initial position
-							particle.style.left = `${x}px`;
-							particle.style.top = `${y}px`;
-
-							document.body.appendChild(particle);
-
-							setTimeout(() => particle.remove(), 1000);
-						}
-
-						prizeBox?.addEventListener("click", (e) => {
-							const rect = prizeBox.getBoundingClientRect();
-							prizeBox.classList.add("pop");
-
-							// Create multiple particles
-							for (let i = 0; i < 12; i++) {
-								setTimeout(() => {
-									const x = rect.left + rect.width / 2;
-									const y = rect.top + rect.height / 2;
-									createMoneyParticle(x, y);
-								}, i * 50);
-							}
-
-							setTimeout(() => {
-								prizeBox.classList.remove("pop");
-							}, 300);
-						});
-					});
+				<script>
+					import { initializePrize } from "../scripts/prize";
+					document.addEventListener("DOMContentLoaded", initializePrize);
 				</script>
 			</section>
 
