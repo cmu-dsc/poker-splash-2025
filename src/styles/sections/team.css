@@ -32,16 +32,48 @@
   position: relative;
 }
 
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: #ff4d4d;
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
 .team-member:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(255, 77, 77, 0.15);
   border-color: rgba(255, 77, 77, 0.3);
 }
 
+.team-member:hover::before {
+  opacity: 0.15;
+}
+
 .member-avatar {
   width: 120px;
   height: 120px;
   margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-avatar {
+  transform: scale(1.05);
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .avatar-placeholder {
@@ -67,13 +99,13 @@
 .member-info h3 {
   color: white;
   font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.3rem;
 }
 
 .role {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
-  margin-bottom: 0.8rem;
+  margin: 0 0 0.8rem;
 }
 
 .social-links {
@@ -97,8 +129,29 @@
     gap: 1.5rem;
   }
 
+  .team-member {
+    padding: 1rem;
+  }
+
   .member-avatar {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-info h3 {
+    font-size: 1rem;
+  }
+
+  .role {
+    font-size: 0.8rem;
+  }
+
+  .social-links {
+    gap: 0.6rem;
+  }
+
+  .social-link svg {
+    width: 16px;
+    height: 16px;
   }
 }
