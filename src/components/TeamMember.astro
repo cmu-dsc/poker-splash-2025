@@ -3,18 +3,22 @@ interface Props {
   name: string;
   role: string;
   image?: string;
+  imageFallback?: string;
   github?: string;
   linkedin?: string;
 }
 
-const { name, role, image, github, linkedin } = Astro.props;
+const { name, role, image, imageFallback, github, linkedin } = Astro.props;
 ---
 
 <div class="team-member">
   <div class="member-avatar">
     {
       image ? (
-        <img src={image} alt={`${name}'s avatar`} />
+        <picture>
+          <source srcset={image} type="image/webp" />
+          <img src={imageFallback || image} alt={`${name}'s avatar`} />
+        </picture>
       ) : (
         <div class="avatar-placeholder" />
       )
