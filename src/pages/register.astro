@@ -1,0 +1,101 @@
+---
+import "../styles/global.css";
+import "../styles/sections/title.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Registration Coming Soon - Jump Poker AI Competition</title>
+  </head>
+  <body>
+    <main>
+      <section class="construction-section">
+        <div class="construction-content">
+          <h1>🚧 Registration Coming Soon 🚧</h1>
+          <p class="message">We're still setting things up! Check back in November 2024.</p>
+          <div class="card-symbols">♠ ♥ ♣ ♦</div>
+          <a href="/" class="back-button">← Back to Home</a>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      .construction-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #1a1a1a, #222222);
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .construction-content {
+        max-width: 600px;
+        padding: 3rem;
+        background: linear-gradient(145deg, #222222, #2a2a2a);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #ff4d4d;
+        margin-bottom: 1.5rem;
+      }
+
+      .message {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+      }
+
+      .card-symbols {
+        font-size: 2rem;
+        margin: 2rem 0;
+        letter-spacing: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #ff4d4d;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: transform 0.3s ease;
+      }
+
+      .back-button:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .construction-content {
+          padding: 2rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .message {
+          font-size: 1.1rem;
+        }
+
+        .card-symbols {
+          font-size: 1.5rem;
+          letter-spacing: 0.5rem;
+        }
+      }
+    </style>
+  </body>
+</html>
+
