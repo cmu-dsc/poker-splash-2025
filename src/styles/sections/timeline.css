@@ -189,7 +189,7 @@
 /* Responsive Design */
 @media (max-width: 640px) {
   .timeline::before {
-    left: 1rem;
+    left: 0.25rem;  /* Adjusted from 1rem to align with dot */
   }
 
   .timeline-item {
@@ -199,7 +199,8 @@
   }
 
   .timeline-item::before {
-    left: 0;
+    left: -2.075rem;  /* Adjusted to align with line */
+    top: 0.75rem;
   }
 
   .timeline-date {

@@ -65,31 +65,20 @@ import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 							<h2>About the Competition</h2>
 							<div class="highlight-box">
 								<p class="lead">
-									Join the 2025 Jump Trading Collegiate Poker AI Competition -
-									an elite competition where top university students develop
-									cutting-edge AI agents for competitive poker play. Showcase
-									your skills in machine learning and game theory while
-									competing for extraordinary rewards.
+									Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent.
 								</p>
 							</div>
 							<div class="feature-points">
 								<div class="feature">
 									<span class="feature-icon">🏆</span>
 									<p>
-										With a $100,000 prize pool sponsored by Jump Trading and
-										hosted by CMU Data Science Club, teams will battle in an
-										advanced poker variant that pushes the boundaries of AI
-										strategy. Direct recruiting opportunities with Jump Trading
-										await standout participants.
+										Battle in an advanced poker variant with direct recruiting opportunities from Jump Trading. Hosted by CMU Data Science Club.
 									</p>
 								</div>
 								<div class="feature">
 									<span class="feature-icon">🌟</span>
 									<p>
-										Experience an exciting online tournament phase, with top
-										teams advancing to exclusive in-person finals at Jump
-										Trading's Chicago headquarters. Full development support and
-										resources provided throughout your journey.
+										Compete online and advance to the finals at Jump Trading's Chicago HQ. Full development support provided.
 									</p>
 								</div>
 							</div>
@@ -146,8 +135,6 @@ import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 						const prizeBox = document.getElementById("prize-box");
 						const moneySymbols = ["💵", "💰", "💸", "$"];
 
-						console.log("Script loaded, prize box:", prizeBox); // Debug log
-
 						function createMoneyParticle(x, y) {
 							const particle = document.createElement("div");
 							particle.className = "money-particle";
@@ -173,13 +160,11 @@ import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 							particle.style.top = `${y}px`;
 
 							document.body.appendChild(particle);
-							console.log("Particle created at:", x, y);
 
 							setTimeout(() => particle.remove(), 1000);
 						}
 
 						prizeBox?.addEventListener("click", (e) => {
-							console.log("Prize box clicked!"); // Debug log
 							const rect = prizeBox.getBoundingClientRect();
 							prizeBox.classList.add("pop");
 
