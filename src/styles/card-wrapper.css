@@ -1,0 +1,83 @@
+.card-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+section {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: calc(100% - 4rem);
+  height: calc(100vh - 4rem);
+  background-color: inherit;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease-out;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add glow effect */
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.2),
+              inset 0 0 15px rgba(255, 77, 77, 0.1);
+  transition: transform 0.5s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect */
+section:hover {
+  border-color: rgba(255, 77, 77, 0.5);
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.3),
+              inset 0 0 20px rgba(255, 77, 77, 0.15);
+}
+
+/* Card decorations */
+section::before,
+section::after {
+  content: var(--card-content, 'A\A♠');
+  position: absolute;
+  white-space: pre;
+  color: #ff4d4d;
+  font-size: calc(min(4vw, 48px));
+  line-height: 1;
+  font-weight: bold;
+  opacity: 0.7;
+  text-align: center;
+  width: calc(min(6vw, 72px));
+}
+
+section::before {
+  top: 1rem;
+  left: 1rem;
+}
+
+section::after {
+  bottom: 1rem;
+  right: 1rem;
+  transform: rotate(180deg);
+}
+
+main {
+  height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .card-wrapper {
+    padding: 1rem;
+  }
+  
+  section {
+    top: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100vh - 2rem);
+    padding: 1rem;
+  }
+  
+  section::before,
+  section::after {
+    font-size: calc(min(5vw, 36px));
+    width: calc(min(7vw, 54px));
+  }
+}

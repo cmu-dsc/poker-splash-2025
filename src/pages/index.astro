@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "../styles/animations.css";
+import "../styles/card-wrapper.css";
 import "../styles/sections/title.css";
 import "../styles/sections/about.css";
 import "../styles/sections/prize.css";
@@ -8,7 +9,12 @@ import "../styles/sections/rules.css";
 import "../styles/sections/timeline.css";
 import "../styles/sections/faq.css";
 import "../styles/sections/team.css";
+import "../styles/sections/footer.css";
 import TeamMember from "../components/TeamMember.astro";
+import EmailIcon from "../components/icons/EmailIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import SmallDiscordIcon from "../components/icons/SmallDiscordIcon.astro";
+import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 ---
 
 <html lang="en">
@@ -21,471 +27,531 @@ import TeamMember from "../components/TeamMember.astro";
 	</head>
 	<body>
 		<main>
-			<section class="title-section">
-				<div class="logos">
-					<div class="competition-logo">
-						<!-- Competition Logo Placeholder -->
-						<div class="logo-placeholder">Competition Logo</div>
-					</div>
-				</div>
-
-				<div class="title-content">
-					<h1>Jump Trading Collegiate Poker AI</h1>
-					<div class="card-symbols">♠ ♥ ♣ ♦</div>
-					<p>2025 Competition</p>
-
-					<div class="cta-buttons">
-						<a href="/register" class="cta-button primary">Register Now</a>
-						<a href="https://discord.gg/J9be7vVt5F" class="cta-button discord">
-							<svg
-								class="discord-icon"
-								viewBox="0 0 24 24"
-								width="24"
-								height="24"
-							>
-								<path
-									fill="currentColor"
-									d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"
-								></path>
-							</svg>
-							Join Discord
-						</a>
-					</div>
-				</div>
-
-				<div class="scroll-indicator">
-					<div class="scroll-arrow">↓</div>
-				</div>
-			</section>
-
-			<section class="about-section">
-				<div class="about-content">
-					<div class="about-left">
-						<div class="about-text">
-							<h2>About the Competition</h2>
-							<div class="highlight-box">
-								<p class="lead">
-									Join the 2025 Jump Trading Collegiate Poker AI Competition -
-									an elite competition where top university students develop
-									cutting-edge AI agents for competitive poker play. Showcase
-									your skills in machine learning and game theory while
-									competing for extraordinary rewards.
-								</p>
+			<div class="card-wrapper">
+				<section class="title-section">
+					<div class="title-content">
+						<div class="logos">
+							<div class="competition-logo">
+								<!-- Competition Logo Placeholder -->
+								<div class="logo-placeholder">Competition Logo</div>
 							</div>
-							<div class="feature-points">
-								<div class="feature">
-									<span class="feature-icon">🏆</span>
-									<p>
-										With a $100,000 prize pool sponsored by Jump Trading and
-										hosted by CMU Data Science Club, teams will battle in an
-										advanced poker variant that pushes the boundaries of AI
-										strategy. Direct recruiting opportunities with Jump Trading
-										await standout participants.
+						</div>
+
+						<div class="title-main">
+							<h1>Jump Trading Collegiate Poker AI</h1>
+							<div class="card-symbols">♠ ♥ ♣ ♦</div>
+							<p>2025 Competition</p>
+
+							<div class="cta-buttons">
+								<a href="/register" class="cta-button primary">Register Now</a>
+								<a
+									href="https://discord.gg/J9be7vVt5F"
+									class="cta-button discord"
+								>
+									<LargeDiscordIcon />
+									Join Discord
+								</a>
+							</div>
+						</div>
+
+						<div class="scroll-indicator">
+							<div class="scroll-arrow">↓</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="card-wrapper">
+				<section class="about-section">
+					<div class="about-content">
+						<div class="about-left">
+							<div class="about-text">
+								<h2>About the Competition</h2>
+								<div class="highlight-box">
+									<p class="lead">
+										Join the 2025 Jump Trading Collegiate Poker AI Competition -
+										an elite competition where top university students develop
+										cutting-edge AI agents for competitive poker play. Showcase
+										your skills in machine learning and game theory while
+										competing for extraordinary rewards.
 									</p>
 								</div>
-								<div class="feature">
-									<span class="feature-icon">🌟</span>
+								<div class="feature-points">
+									<div class="feature">
+										<span class="feature-icon">🏆</span>
+										<p>
+											With a $100,000 prize pool sponsored by Jump Trading and
+											hosted by CMU Data Science Club, teams will battle in an
+											advanced poker variant that pushes the boundaries of AI
+											strategy. Direct recruiting opportunities with Jump
+											Trading await standout participants.
+										</p>
+									</div>
+									<div class="feature">
+										<span class="feature-icon">🌟</span>
+										<p>
+											Experience an exciting online tournament phase, with top
+											teams advancing to exclusive in-person finals at Jump
+											Trading's Chicago headquarters. Full development support
+											and resources provided throughout your journey.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="about-right">
+							<div class="video-container">
+								<iframe
+									width="560"
+									height="315"
+									src="https://www.youtube.com/embed/your-video-id"
+									title="Competition Video"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
+								>
+								</iframe>
+							</div>
+							<div class="sponsors">
+								<div class="club-logo">
+									<img
+										src="./images/logos/cmudsc.png"
+										alt="CMU Data Science Club Logo"
+										width="133"
+										height="150"
+									/>
+								</div>
+								<div class="sponsor-logo">
+									<img
+										src="./images/logos/jump-trading.png"
+										alt="Jump Trading Logo"
+										width="185"
+										height="150"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="card-wrapper">
+				<section class="prize-section">
+					<div class="prize-content">
+						<h2>Prize Pool</h2>
+						<div class="prize-box">
+							<div class="prize-amount">$100,000</div>
+							<div class="total-text">Total Prize Pool</div>
+						</div>
+						<div class="additional-prize">
+							Plus recruiting opportunities at Jump Trading
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="card-wrapper">
+				<section class="rules-section">
+					<div class="rules-content">
+						<h2>Competition Rules</h2>
+						<div class="rules-grid">
+							<div class="rule-box">
+								<h3>Eligibility</h3>
+								<ul>
+									<li>Open to all U.S. and Canadian university students</li>
+									<li>Teams of up to 3 members allowed</li>
+									<li>Teams can include members from different schools</li>
+								</ul>
+							</div>
+							<div class="rule-box">
+								<h3>Technical Requirements</h3>
+								<ul>
+									<li>Agents must be implemented in Python</li>
+									<li>Each bot runs with 1 vCPU and 2 GB of RAM</li>
+									<li>Maximum runtime of 7 minutes per agent per match</li>
+									<li>Use of external libraries limited to approved set</li>
+									<li>Additional libraries may be requested for approval</li>
+								</ul>
+							</div>
+							<div class="rule-box">
+								<h3>Match Format</h3>
+								<ul>
+									<li>Matches are heads-up (1v1)</li>
+									<li>Each match consists of 1000 hands</li>
+									<li>Players start each hand with a fresh bankroll</li>
+									<li>
+										Winner is determined by total bankroll across the match
+									</li>
+								</ul>
+							</div>
+							<div class="rule-box">
+								<h3>Tournament Structure</h3>
+								<ul>
+									<li>~20 matches per day per team during online phase</li>
+									<li>
+										Top 15 teams (ranked by MMR) advance to in-person finals
+									</li>
+									<li>Finals held at Jump Trading&apos;s Chicago offices</li>
+									<li>
+										Finals use round-robin format with teams ranked by winrate
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="card-wrapper">
+				<section class="timeline-section">
+					<div class="timeline-content">
+						<h2>Competition Timeline</h2>
+						<div class="timeline">
+							<div class="timeline-item">
+								<div class="timeline-date">November 1, 2024</div>
+								<div class="timeline-card">
+									<h3>Registration Opens</h3>
 									<p>
-										Experience an exciting online tournament phase, with top
-										teams advancing to exclusive in-person finals at Jump
-										Trading's Chicago headquarters. Full development support and
-										resources provided throughout your journey.
+										Team registration begins. Start forming your teams and
+										preparing your development environment.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline-item">
+								<div class="timeline-date">February 8, 2025</div>
+								<div class="timeline-card">
+									<h3>Online Phase Begins</h3>
+									<p>
+										Access to the variant, competition framework, and
+										documentation. Weekly office hours begin.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline-item">
+								<div class="timeline-date">March 8, 2025</div>
+								<div class="timeline-card">
+									<h3>Online Phase Ends</h3>
+									<p>
+										All teams must submit their final AI agents by midnight EST.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline-item">
+								<div class="timeline-date">March 10, 2025</div>
+								<div class="timeline-card">
+									<h3>Semi-Finals Ceremony</h3>
+									<p>
+										Winners are selected and invited to in-person Finals.
+										Matches will be live-streamed and select prizes will be
+										given out.
+									</p>
+								</div>
+							</div>
+
+							<div class="timeline-item">
+								<div class="timeline-date">Late March, 2025</div>
+								<div class="timeline-card">
+									<h3>In-Person Finals</h3>
+									<p>
+										Finalists arrive at Jump's offices and build bots for the
+										final variant.
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="about-right">
-						<div class="video-container">
-							<iframe
-								width="560"
-								height="315"
-								src="https://www.youtube.com/embed/your-video-id"
-								title="Competition Video"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							>
-							</iframe>
-						</div>
-						<div class="sponsors">
-							<div class="club-logo">
-								<img
-									src="./images/logos/cmudsc.png"
-									alt="CMU Data Science Club Logo"
-									width="133"
-									height="150"
-								/>
-							</div>
-							<div class="sponsor-logo">
-								<img
-									src="./images/logos/jump-trading.png"
-									alt="Jump Trading Logo"
-									width="185"
-									height="150"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 
-			<section class="prize-section">
-				<div class="prize-content">
-					<h2>Prize Pool</h2>
-					<div class="prize-box">
-						<div class="prize-amount">$100,000</div>
-						<div class="total-text">Total Prize Pool</div>
-					</div>
-					<div class="additional-prize">
-						Plus recruiting opportunities at Jump Trading
-					</div>
-				</div>
-			</section>
-
-			<section class="rules-section">
-				<div class="rules-content">
-					<h2>Competition Rules</h2>
-					<div class="rules-grid">
-						<div class="rule-box">
-							<h3>Eligibility</h3>
-							<ul>
-								<li>Open to all U.S. and Canadian university students</li>
-								<li>Teams of up to 3 members allowed</li>
-								<li>Teams can include members from different schools</li>
-							</ul>
-						</div>
-						<div class="rule-box">
-							<h3>Technical Requirements</h3>
-							<ul>
-								<li>Agents must be implemented in Python</li>
-								<li>Each bot runs with 1 vCPU and 2 GB of RAM</li>
-								<li>Maximum runtime of 7 minutes per agent per match</li>
-								<li>Use of external libraries limited to approved set</li>
-								<li>Additional libraries may be requested for approval</li>
-							</ul>
-						</div>
-						<div class="rule-box">
-							<h3>Match Format</h3>
-							<ul>
-								<li>Matches are heads-up (1v1)</li>
-								<li>Each match consists of 1000 hands</li>
-								<li>Players start each hand with a fresh bankroll</li>
-								<li>Winner is determined by total bankroll across the match</li>
-							</ul>
-						</div>
-						<div class="rule-box">
-							<h3>Tournament Structure</h3>
-							<ul>
-								<li>~20 matches per day per team during online phase</li>
-								<li>
-									Top 15 teams (ranked by MMR) advance to in-person finals
-								</li>
-								<li>Finals held at Jump Trading&apos;s Chicago offices</li>
-								<li>
-									Finals use round-robin format with teams ranked by winrate
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="timeline-section">
-				<div class="timeline-content">
-					<h2>Competition Timeline</h2>
-					<div class="timeline">
-						<div class="timeline-item">
-							<div class="timeline-date">November 1, 2024</div>
-							<div class="timeline-card">
-								<h3>Registration Opens</h3>
+			<div class="card-wrapper">
+				<section class="faq-section">
+					<div class="faq-content">
+						<h2>Frequently Asked Questions</h2>
+						<div class="faq-grid">
+							<details class="faq-item">
+								<summary>What programming languages can I use?</summary>
 								<p>
-									Team registration begins. Start forming your teams and
-									preparing your development environment.
+									You can use Python 3. Many common external libraries will be
+									available for use. If you'd like to use any others, you can
+									request them in our Discord.
 								</p>
-							</div>
-						</div>
+							</details>
 
-						<div class="timeline-item">
-							<div class="timeline-date">February 8, 2025</div>
-							<div class="timeline-card">
-								<h3>Online Phase Begins</h3>
+							<details class="faq-item">
+								<summary>How many people can be on a team?</summary>
 								<p>
-									Access to the variant, competition framework, and
-									documentation. Weekly office hours begin.
+									Teams can be between 1 and 3 people from any U.S. or Canadian
+									university.
 								</p>
-							</div>
-						</div>
+							</details>
 
-						<div class="timeline-item">
-							<div class="timeline-date">March 8, 2025</div>
-							<div class="timeline-card">
-								<h3>Online Phase Ends</h3>
+							<details class="faq-item">
+								<summary>What poker variant will be used?</summary>
 								<p>
-									All teams must submit their final AI agents by midnight EST.
+									The specific poker variant will be revealed when the
+									competition starts. It will be more complex than standard
+									no-limit Texas Hold 'em. The finals will feature a slightly
+									different variant.
 								</p>
-							</div>
-						</div>
+							</details>
 
-						<div class="timeline-item">
-							<div class="timeline-date">March 10, 2025</div>
-							<div class="timeline-card">
-								<h3>Semi-Finals Ceremony</h3>
+							<details class="faq-item">
+								<summary>What are the prizes?</summary>
 								<p>
-									Winners are selected and invited to in-person Finals. Matches
-									will be live-streamed and select prizes will be given out.
+									While the exact prize pool is still being finalized, there
+									will be prizes for top performers as well as special
+									recognition for creative solutions. Stay tuned for prize
+									announcements!
 								</p>
-							</div>
-						</div>
+							</details>
 
-						<div class="timeline-item">
-							<div class="timeline-date">Late March, 2025</div>
-							<div class="timeline-card">
-								<h3>In-Person Finals</h3>
+							<details class="faq-item">
+								<summary>Is there a registration fee?</summary>
+								<p>No, participation in the competition is completely free.</p>
+							</details>
+
+							<details class="faq-item">
+								<summary>What frameworks are supported?</summary>
 								<p>
-									Finalists arrive at Jump's offices and build bots for the
-									final variant.
+									You only need to implement a simple interface we provide that
+									tells your bot when it's your turn to act. You're free to use
+									any approach you want - from simple rules to deep learning.
+									For those interested in reinforcement learning, the game
+									engine also implements the OpenAI Gym interface, and we'll
+									provide example code for getting started with RL approaches.
 								</p>
-							</div>
+							</details>
+
+							<details class="faq-item">
+								<summary>How does the online phase work?</summary>
+								<p>
+									During the online portion, matches will be run continuously
+									with approximately 20 matches per day per team. The
+									matchmaking system is TBD. Teams can request a limited number
+									of additional matches against specific opponents each day.
+								</p>
+							</details>
+
+							<details class="faq-item">
+								<summary>What happens at the finals?</summary>
+								<p>
+									The finals will be a 3-4 day in-person event at Jump Trading's
+									offices in Chicago. Teams will compete in a round-robin format
+									using a slightly modified variant of the game, with final
+									rankings determined by overall winrate. Finalists will also
+									have the chance to network with Jump traders, quants,
+									engineers, and recruiters, and attend cool talks and social
+									events.
+								</p>
+							</details>
+
+							<details class="faq-item">
+								<summary
+									>Can I prepare my bot before knowing the variant?</summary
+								>
+								<p>
+									Yes! You're allowed to pretrain a model and modify it to work
+									with the variant once it's revealed.
+								</p>
+							</details>
+
+							<details class="faq-item">
+								<summary>What resources are provided?</summary>
+								<p>
+									We provide a complete development framework, documentation,
+									example bots, and weekly office hours with the organizing
+									team. You'll also have access to our Discord community for
+									support.
+								</p>
+							</details>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 
-			<section class="faq-section">
-				<div class="faq-content">
-					<h2>Frequently Asked Questions</h2>
-					<div class="faq-grid">
-						<details class="faq-item">
-							<summary>What programming languages can I use?</summary>
-							<p>
-								You can use Python 3. Many common external libraries will be
-								available for use. If you'd like to use any others, you can
-								request them in our Discord.
-							</p>
-						</details>
+			<div class="card-wrapper">
+				<section class="team-section">
+					<div class="team-content">
+						<h2>Our Team</h2>
+						<div class="team-grid">
+							<TeamMember
+								name="Clement Ou"
+								role="Competitions Director & Lead Architect"
+								image="./images/team/clement.jpg"
+								github="https://github.com/clementou"
+								linkedin="https://linkedin.com/in/clementou"
+							/>
+							<TeamMember
+								name="Al Hassan"
+								role="DSC President"
+								image="./images/team/al.png"
+								github="https://github.com/almutwakel"
+								linkedin="https://www.linkedin.com/in/almutwakel"
+							/>
+							<TeamMember
+								name="Dongkyun Kim (DK)"
+								role="Poker Lead"
+								image="./images/team/dk.jpg"
+								github="https://github.com/dongkyunk"
+								linkedin="https://www.linkedin.com/in/dongkyun-k"
+							/>
+							<TeamMember
+								name="Emily Yu"
+								role="Project Manager"
+								image="./images/team/emily.png"
+								github="https://github.com/emshyu"
+								linkedin="https://www.linkedin.com/in/emily-yu-a28148204"
+							/>
+							<TeamMember
+								name="Tobias Schamel"
+								role="Backend Lead"
+								image="./images/team/tobi.png"
+								github="https://github.com/sirtobsi"
+							/>
+							<TeamMember
+								name="Elijah Baraw"
+								role="Platform Lead"
+								image="./images/team/elijah.jpeg"
+								github="https://github.com/elijah-bae-raw"
+								linkedin="https://www.linkedin.com/in/elijah-baraw"
+							/>
+							<TeamMember
+								name="Varrshitha Kumar"
+								role="Design Director"
+								image="./images/team/varr.jpeg"
+								github="https://github.com/varrkumar"
+								linkedin="https://www.linkedin.com/in/varrkumar"
+							/>
+							<TeamMember
+								name="Bo Xie"
+								role="Design Director"
+								image="./images/team/bo.png"
+								github="https://github.com/bobofishbo"
+								linkedin="https://www.linkedin.com/in/bo-xie-918761291"
+							/>
+							<TeamMember
+								name="Grace Lin"
+								role="DSC Vice President"
+								image="./images/team/grace.png"
+								linkedin="https://www.linkedin.com/in/gracexlin/"
+							/>
+							<TeamMember
+								name="Jei Park"
+								role="Branding Director"
+								image="./images/team/jei.png"
+								github="https://github.com/jeih"
+								linkedin="https://www.linkedin.com/in/jehyo-jei-park"
+							/>
+							<TeamMember
+								name="Juny Kim"
+								role="Operations Director"
+								image="./images/team/juny.png"
+								github="https://github.com/jkim999"
+								linkedin="https://www.linkedin.com/in/junykim1"
+							/>
+							<TeamMember
+								name="Oliver Yun"
+								role="Finance Director"
+								image="./images/team/oliver.jpg"
+								github="https://github.com/oliveryun11"
+								linkedin="https://www.linkedin.com/in/oliver-yun-474b77289"
+							/>
+						</div>
+					</div>
+				</section>
+			</div>
 
-						<details class="faq-item">
-							<summary>How many people can be on a team?</summary>
-							<p>
-								Teams can be between 1 and 3 people from any U.S. or Canadian
-								university.
-							</p>
-						</details>
+			<div class="card-wrapper">
+				<section class="team-section alumni-section">
+					<div class="team-content">
+						<h2>Alumni</h2>
+						<div class="team-grid">
+							<TeamMember
+								name="Eric Zheng"
+								role="Poker Club President '24"
+								image="./images/alumni/eric.png"
+								linkedin="https://www.linkedin.com/in/eric-zheng-045976224"
+							/>
+							<TeamMember
+								name="Shiva Oswal"
+								role="Education Director '24"
+								image="./images/alumni/shiva.png"
+								github="https://github.com/Agnimandur"
+								linkedin="https://www.linkedin.com/in/shivaoswal"
+							/>
+							<TeamMember
+								name="Jessica Ruan"
+								role="Cloud Dev '24"
+								image="./images/alumni/jessica.png"
+								github="https://github.com/jespiron"
+								linkedin="https://www.linkedin.com/in/jessica-ruan"
+							/>
+							<TeamMember
+								name="Claire Liu"
+								role="Frontend Dev '24"
+								image="./images/alumni/claire.png"
+								linkedin="https://www.linkedin.com/in/claire-liu-b957861b0"
+							/>
+							<TeamMember
+								name="Suha Niyas"
+								role="Design Director '24"
+								image="./images/alumni/suha.jpg"
+								linkedin="https://www.linkedin.com/in/suha-niyas"
+							/>
+							<TeamMember
+								name="Wenhan Li"
+								role="Frontend Dev '24"
+								image="./images/alumni/wenhan.png"
+								linkedin="https://www.linkedin.com/in/wenhan-li-40495624b"
+							/>
+						</div>
+					</div>
+				</section>
+			</div>
 
-						<details class="faq-item">
-							<summary>What poker variant will be used?</summary>
-							<p>
-								The specific poker variant will be revealed when the competition
-								starts. It will be more complex than standard no-limit Texas
-								Hold 'em. The finals will feature a slightly different variant.
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>What are the prizes?</summary>
-							<p>
-								While the exact prize pool is still being finalized, there will
-								be prizes for top performers as well as special recognition for
-								creative solutions. Stay tuned for prize announcements!
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>Is there a registration fee?</summary>
-							<p>No, participation in the competition is completely free.</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>What frameworks are supported?</summary>
-							<p>
-								You only need to implement a simple interface we provide that
-								tells your bot when it's your turn to act. You're free to use
-								any approach you want - from simple rules to deep learning. For
-								those interested in reinforcement learning, the game engine also
-								implements the OpenAI Gym interface, and we'll provide example
-								code for getting started with RL approaches.
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>How does the online phase work?</summary>
-							<p>
-								During the online portion, matches will be run continuously with
-								approximately 20 matches per day per team. The matchmaking
-								system is TBD. Teams can request a limited number of additional
-								matches against specific opponents each day.
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>What happens at the finals?</summary>
-							<p>
-								The finals will be a 3-4 day in-person event at Jump Trading's
-								offices in Chicago. Teams will compete in a round-robin format
-								using a slightly modified variant of the game, with final
-								rankings determined by overall winrate. Finalists will also have
-								the chance to network with Jump traders, quants, engineers, and
-								recruiters, and attend cool talks and social events.
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>Can I prepare my bot before knowing the variant?</summary
-							>
-							<p>
-								Yes! You're allowed to pretrain a model and modify it to work
-								with the variant once it's revealed.
-							</p>
-						</details>
-
-						<details class="faq-item">
-							<summary>What resources are provided?</summary>
-							<p>
-								We provide a complete development framework, documentation,
-								example bots, and weekly office hours with the organizing team.
-								You'll also have access to our Discord community for support.
-							</p>
-						</details>
+			<div class="footer-wrapper">
+				<div class="footer-content">
+					<div class="footer-info">
+						<h3>Contact Us</h3>
+						<ul class="contact-list">
+							<li>
+								<EmailIcon />
+								<a href="mailto:datascienceclub@cmu.edu"
+									>datascienceclub@cmu.edu</a
+								>
+							</li>
+							<li>
+								<GithubIcon />
+								<a href="https://github.com/cmu-dsc" target="_blank"
+									>GitHub Org</a
+								>
+							</li>
+							<li>
+								<SmallDiscordIcon />
+								<a href="https://discord.gg/J9be7vVt5F" target="_blank"
+									>Join our Discord</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-info">
+						<h3>Location</h3>
+						<ul class="contact-list">
+							<li>Carnegie Mellon University</li>
+							<li>5000 Forbes Avenue</li>
+							<li>Pittsburgh, PA 15213</li>
+						</ul>
+					</div>
+					<div class="copyright">
+						© {new Date().getFullYear()} CMU Data Science Club. All rights reserved.
 					</div>
 				</div>
-			</section>
-
-			<section class="team-section">
-				<div class="team-content">
-					<h2>Our Team</h2>
-					<div class="team-grid">
-						<TeamMember
-							name="Clement Ou"
-							role="Competitions Director & Lead Architect"
-							image="./images/team/clement.jpg"
-							github="https://github.com/clementou"
-							linkedin="https://linkedin.com/in/clementou"
-						/>
-						<TeamMember
-							name="Al Hassan"
-							role="DSC President"
-							image="./images/team/al.png"
-							github="https://github.com/almutwakel"
-							linkedin="https://www.linkedin.com/in/almutwakel"
-						/>
-						<TeamMember
-							name="Dongkyun Kim (DK)"
-							role="Poker Lead"
-							image="./images/team/dk.jpg"
-							github="https://github.com/dongkyunk"
-							linkedin="https://www.linkedin.com/in/dongkyun-k"
-						/>
-						<TeamMember
-							name="Emily Yu"
-							role="Project Manager"
-							image="./images/team/emily.png"
-							github="https://github.com/emshyu"
-							linkedin="https://www.linkedin.com/in/emily-yu-a28148204"
-						/>
-						<TeamMember
-							name="Tobias Schamel"
-							role="Backend Lead"
-							image="./images/team/tobi.png"
-							github="https://github.com/sirtobsi"
-						/>
-						<TeamMember
-							name="Elijah Baraw"
-							role="Platform Lead"
-							image="./images/team/elijah.jpeg"
-							github="https://github.com/elijah-bae-raw"
-							linkedin="https://www.linkedin.com/in/elijah-baraw"
-						/>
-						<TeamMember
-							name="Varrshitha Kumar"
-							role="Design Director"
-							image="./images/team/varr.jpeg"
-							github="https://github.com/varrkumar"
-							linkedin="https://www.linkedin.com/in/varrkumar"
-						/>
-						<TeamMember
-							name="Bo Xie"
-							role="Design Director"
-							image="./images/team/bo.png"
-							github="https://github.com/bobofishbo"
-							linkedin="https://www.linkedin.com/in/bo-xie-918761291"
-						/>
-						<TeamMember
-							name="Grace Lin"
-							role="DSC Vice President"
-							image="./images/team/grace.png"
-							linkedin="https://www.linkedin.com/in/gracexlin/"
-						/>
-						<TeamMember
-							name="Jei Park"
-							role="UX Designer"
-							image="./images/team/jei.png"
-							github="https://github.com/jeih"
-							linkedin="https://www.linkedin.com/in/jehyo-jei-park"
-						/>
-						<TeamMember
-							name="Juny Kim"
-							role="Operations Director"
-							image="./images/team/juny.png"
-							github="https://github.com/jkim999"
-							linkedin="https://www.linkedin.com/in/junykim1"
-						/>
-						<TeamMember
-							name="Oliver Yun"
-							role="Finance Director"
-							image="./images/team/oliver.jpg"
-							github="https://github.com/oliveryun11"
-							linkedin="https://www.linkedin.com/in/oliver-yun-474b77289"
-						/>
-					</div>
-				</div>
-			</section>
-
-			<section class="team-section alumni-section">
-				<div class="team-content">
-					<h2>Alumni</h2>
-					<div class="team-grid">
-						<TeamMember
-							name="Eric Zheng"
-							role="Poker Club President '24"
-							image="./images/alumni/eric.png"
-							linkedin="https://www.linkedin.com/in/eric-zheng-045976224"
-						/>
-						<TeamMember
-							name="Shiva Oswal"
-							role="Education Director '24"
-							image="./images/alumni/shiva.png"
-							github="https://github.com/Agnimandur"
-							linkedin="https://www.linkedin.com/in/shivaoswal"
-						/>
-						<TeamMember
-							name="Jessica Ruan"
-							role="Cloud Dev '24"
-							image="./images/alumni/jessica.png"
-							github="https://github.com/jespiron"
-							linkedin="https://www.linkedin.com/in/jessica-ruan"
-						/>
-						<TeamMember
-							name="Claire Liu"
-							role="Frontend Dev '24"
-							image="./images/alumni/claire.png"
-							linkedin="https://www.linkedin.com/in/claire-liu-b957861b0"
-						/>
-						<TeamMember
-							name="Suha Niyas"
-							role="Design Director '24"
-							image="./images/alumni/suha.jpg"
-							linkedin="https://www.linkedin.com/in/suha-niyas"
-						/>
-						<TeamMember
-							name="Wenhan Li"
-							role="Frontend Dev '24"
-							image="./images/alumni/wenhan.png"
-							linkedin="https://www.linkedin.com/in/wenhan-li-40495624b"
-						/>
-					</div>
-				</div>
-			</section>
+			</div>
 		</main>
+		<script src="../scripts/scroll-animation.js"></script>
+		<script src="../scripts/card-decorations.js"></script>
 	</body>
 </html>

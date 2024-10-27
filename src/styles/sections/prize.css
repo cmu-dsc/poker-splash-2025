@@ -9,6 +9,9 @@
 
 .prize-content {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .prize-content h2 {
@@ -25,6 +28,9 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   margin-bottom: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prize-amount {
@@ -48,11 +54,12 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .prize-section {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
   }
 
   .prize-box {
     padding: 2rem;
+    margin: 0 auto 2rem;
   }
 
   .prize-amount {
