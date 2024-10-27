@@ -1,0 +1,100 @@
+/* FAQ Section Container */
+.faq-section {
+  background-color: #222;
+  padding: 4rem 2rem;
+}
+
+.faq-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-content h2 {
+  font-size: 2.5rem;
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* FAQ Grid Layout */
+.faq-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* FAQ Item Styling */
+.faq-item {
+  background: linear-gradient(145deg, #2a2a2a, #222222);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ Question/Summary */
+.faq-item summary {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ff4d4d;
+  cursor: pointer;
+  padding-right: 2rem;
+  position: relative;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus/Minus Icon */
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #ff4d4d;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* FAQ Answer */
+.faq-item p {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Hover Effects */
+.faq-item:hover {
+  background: linear-gradient(145deg, #2d2d2d, #252525);
+}
+
+.faq-item summary:hover {
+  color: #ff6666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-item {
+    padding: 1.25rem;
+  }
+  
+  .faq-item summary {
+    font-size: 1.1rem;
+  }
+  
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+}
