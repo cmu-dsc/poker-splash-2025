@@ -20,3 +20,30 @@
       transform: translateY(0);
   }
 }
+
+@keyframes moneyShower {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(
+      calc(-50% + var(--x-move)), 
+      calc(-50% + var(--y-move))
+    ) scale(1.2) rotate(var(--rotation));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--x-move) * 2), 
+      calc(-50% + var(--y-move) * 2)
+    ) scale(0.8) rotate(var(--rotation));
+  }
+}
+
+@keyframes boxPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

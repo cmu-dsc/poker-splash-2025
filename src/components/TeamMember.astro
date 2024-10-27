@@ -56,6 +56,27 @@ const { name, role, image, github, linkedin } = Astro.props;
   .team-member {
     text-align: center;
     padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: #ff4d4d;
+    opacity: 0;
+    filter: blur(15px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .team-member:hover::before {
+    opacity: 0.15;
   }
 
   .member-avatar {
@@ -64,6 +85,11 @@ const { name, role, image, github, linkedin } = Astro.props;
     margin: 0 auto 1rem;
     border-radius: 50%;
     overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover .member-avatar {
+    transform: scale(1.05);
   }
 
   .member-avatar img {
@@ -101,6 +127,6 @@ const { name, role, image, github, linkedin } = Astro.props;
   }
 
   .social-link:hover {
-    color: #333;
+    color: #ff4d4d;
   }
 </style>

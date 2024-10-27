@@ -35,17 +35,15 @@
 
 /* Event Content */
 .timeline-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(145deg, #222222, #2a2a2a);
-  border-radius: 20px;
-  padding: 2rem;
-  position: relative;
-  transition: transform 0.3s ease;
 }
 
-.timeline-content:hover {
-  transform: translateY(-5px);
+.timeline-content h2 {
+  font-size: 2.5rem;
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 /* Event Details */
@@ -128,8 +126,8 @@
 /* Timeline Items */
 .timeline-item {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   position: relative;
   align-items: flex-start;
 }
@@ -138,7 +136,7 @@
   content: "";
   position: absolute;
   left: 146px;
-  top: 1.5rem;
+  top: 0.75rem;  /* Adjusted to align with date text */
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -149,10 +147,10 @@
 /* Timeline Date */
 .timeline-date {
   width: 130px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #ff4d4d;
   text-align: right;
-  padding-top: 1rem;
+  padding-top: calc(0.75rem - 3px);  /* Reduced from 6px to 2px for better alignment */
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
@@ -163,27 +161,29 @@
   flex: 1;
   background: linear-gradient(145deg, #222222, #2a2a2a);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   margin-left: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 77, 77, 0.15);
+  border-color: rgba(255, 77, 77, 0.3);
 }
 
 .timeline-card h3 {
   color: #ff4d4d;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;  /* Reduced from 1.3rem */
+  margin-bottom: 0.35rem;  /* Reduced from 0.5rem */
 }
 
 .timeline-card p {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
-  font-size: 1rem;
+  line-height: 1.4;  /* Reduced from 1.5 */
+  font-size: 0.95rem;  /* Reduced from 1rem */
 }
 
 /* Responsive Design */

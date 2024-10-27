@@ -28,11 +28,14 @@
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .team-member:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 77, 77, 0.15);
+  border-color: rgba(255, 77, 77, 0.3);
 }
 
 .member-avatar {
