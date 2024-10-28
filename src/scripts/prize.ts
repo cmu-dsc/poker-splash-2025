@@ -35,6 +35,37 @@ function createMoneyParticle (x: number, y: number) {
   setTimeout(() => particle.remove(), 1000);
 }
 
+const AUDIO = {
+  SPIN: new Audio('/sounds/slot-spin.mp3'),
+  WIN: new Audio('/sounds/slot-win.mp3'),
+  LEVER: new Audio('/sounds/lever-pull.flac'),
+};
+
+// Initialize audio settings
+Object.values(AUDIO).forEach(audio => {
+  audio.preload = 'auto';
+  audio.volume = 0.5;
+});
+
+function animatePrizeIncrease (element: HTMLElement, startValue: number, increment: number, duration: number) {
+  const steps = 300;
+  const stepValue = increment / steps;
+  const stepDuration = duration / steps;
+  let currentStep = 0;
+
+  const updateValue = () => {
+    currentStep++;
+    const currentValue = startValue + (stepValue * currentStep);
+    element.textContent = formatNumber(Math.floor(currentValue));
+
+    if (currentStep < steps) {
+      requestAnimationFrame(() => setTimeout(updateValue, stepDuration));
+    }
+  };
+
+  updateValue();
+}
+
 export function initializePrize () {
   const elements: PrizeElements = {
     prizeBox: document.getElementById("prize-box"),
@@ -55,6 +86,11 @@ export function initializePrize () {
 
   function spinSlots () {
     if (isSpinning || currentPrize < 1) return;
+
+    // Play lever and spin sounds
+    AUDIO.LEVER.play();
+    AUDIO.SPIN.play();
+    AUDIO.SPIN.loop = true;
 
     currentPrize -= 1;
     if (elements.prizeValue) {
@@ -78,16 +114,31 @@ export function initializePrize () {
         clearInterval(interval);
         isSpinning = false;
 
+        AUDIO.SPIN.loop = false;
+        AUDIO.SPIN.pause();
+        AUDIO.SPIN.currentTime = 0;
+
         if (elements.slotDisplay && elements.prizeValue && elements.lever) {
           const finalSymbols = elements.slotDisplay.textContent?.split(" ") || [];
           if (new Set(finalSymbols).size === 1) {
+            // Play win sound for matching symbols
+            AUDIO.WIN.play();
+
             elements.slotDisplay!.classList.add("winner");
             setTimeout(() => elements.slotDisplay!.classList.remove("winner"), 1000);
 
+            const winSoundDuration = 9000;
+
+            animatePrizeIncrease(
+              elements.prizeValue,
+              currentPrize,
+              100000,
+              winSoundDuration
+            );
+
             currentPrize += 100000;
             elements.prizeValue.classList.add("prize-increase");
-            elements.prizeValue.textContent = formatNumber(currentPrize);
-            setTimeout(() => elements.prizeValue!.classList.remove("prize-increase"), 1000);
+            setTimeout(() => elements.prizeValue!.classList.remove("prize-increase"), winSoundDuration);
           }
 
           if (currentPrize < 1) {
