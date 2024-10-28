@@ -1,19 +1,20 @@
 ---
-import "../styles/global.css";
-import "../styles/animations.css";
-import "../styles/sections/title.css";
-import "../styles/sections/about.css";
-import "../styles/sections/prize.css";
-import "../styles/sections/rules.css";
-import "../styles/sections/timeline.css";
-import "../styles/sections/faq.css";
-import "../styles/sections/team.css";
-import "../styles/sections/footer.css";
-import TeamMember from "../components/TeamMember.astro";
 import EmailIcon from "../components/icons/EmailIcon.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
-import SmallDiscordIcon from "../components/icons/SmallDiscordIcon.astro";
 import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
+import SmallDiscordIcon from "../components/icons/SmallDiscordIcon.astro";
+import SEO from "../components/SEO.astro";
+import TeamMember from "../components/TeamMember.astro";
+import "../styles/animations.css";
+import "../styles/global.css";
+import "../styles/sections/about.css";
+import "../styles/sections/faq.css";
+import "../styles/sections/footer.css";
+import "../styles/sections/prize.css";
+import "../styles/sections/rules.css";
+import "../styles/sections/team.css";
+import "../styles/sections/timeline.css";
+import "../styles/sections/title.css";
 ---
 
 <html lang="en">
@@ -22,7 +23,59 @@ import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
 		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jump Poker AI Competition</title>
+
+		<SEO
+			title="Jump Trading Collegiate Poker AI Competition 2025"
+			description="Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent. Hosted by CMU Data Science Club."
+		/>
+
+		<!-- Additional Meta Tags -->
+		<meta
+			name="keywords"
+			content="poker AI, machine learning competition, collegiate competition, Jump Trading, CMU, data science, game theory, artificial intelligence"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="CMU Data Science Club" />
+
+		<!-- Structured Data -->
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Event",
+				"name": "Jump Trading Collegiate Poker AI Competition 2025",
+				"description": "Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent.",
+				"startDate": "2024-11-01",
+				"endDate": "2025-03-31",
+				"location": {
+					"@type": "Place",
+					"name": "Jump Trading Chicago Office",
+					"address": {
+						"@type": "PostalAddress",
+						"streetAddress": "600 W Chicago Ave",
+						"addressLocality": "Chicago",
+						"addressRegion": "IL",
+						"postalCode": "60654",
+						"addressCountry": "US"
+					}
+				},
+				"organizer": {
+					"@type": "Organization",
+					"name": "CMU Data Science Club",
+					"url": "https://cmudsc.com"
+				},
+				"sponsor": {
+					"@type": "Organization",
+					"name": "Jump Trading",
+					"url": "https://jumptrading.com"
+				},
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock"
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<main>
