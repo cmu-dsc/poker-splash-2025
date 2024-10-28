@@ -48,7 +48,7 @@ Object.values(AUDIO).forEach(audio => {
 });
 
 function animatePrizeIncrease (element: HTMLElement, startValue: number, increment: number, duration: number) {
-  const steps = 300;
+  const steps = 60;
   const stepValue = increment / steps;
   const stepDuration = duration / steps;
   let currentStep = 0;
@@ -123,11 +123,15 @@ export function initializePrize () {
           if (new Set(finalSymbols).size === 1) {
             // Play win sound for matching symbols
             AUDIO.WIN.play();
+            setTimeout(() => {
+              AUDIO.WIN.pause();
+              AUDIO.WIN.currentTime = 0;
+            }, 3000);
 
             elements.slotDisplay!.classList.add("winner");
             setTimeout(() => elements.slotDisplay!.classList.remove("winner"), 1000);
 
-            const winSoundDuration = 9000;
+            const winSoundDuration = 3000;
 
             animatePrizeIncrease(
               elements.prizeValue,
