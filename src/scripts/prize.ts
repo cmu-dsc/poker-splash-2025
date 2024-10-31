@@ -66,6 +66,13 @@ function animatePrizeIncrease (element: HTMLElement, startValue: number, increme
   updateValue();
 }
 
+// Add tracking function
+function trackEvent (eventName: string) {
+  if (typeof umami !== 'undefined') {
+    umami.track(eventName);
+  }
+}
+
 export function initializePrize () {
   const elements: PrizeElements = {
     prizeBox: document.getElementById("prize-box"),
@@ -175,12 +182,16 @@ export function initializePrize () {
     if (clickCount === 10 && elements.slotMachine && elements.prizeBox) {
       elements.slotMachine.style.display = "block";
       elements.prizeBox.style.marginBottom = "2rem";
+      // Track when users discover the slot machine
+      trackEvent('slot_machine_discovered');
     }
   });
 
   elements.lever?.addEventListener('mousedown', () => {
     if (isSpinning || currentPrize < 1) return;
     elements.lever?.classList.add('pulled');
+    // Track when users play the slot machine
+    trackEvent('slot_machine_played');
     spinSlots();
 
     setTimeout(() => {
@@ -192,6 +203,8 @@ export function initializePrize () {
     e.preventDefault();
     if (isSpinning || currentPrize < 1) return;
     elements.lever?.classList.add('pulled');
+    // Track when users play the slot machine (mobile)
+    trackEvent('slot_machine_played');
     spinSlots();
 
     setTimeout(() => {
