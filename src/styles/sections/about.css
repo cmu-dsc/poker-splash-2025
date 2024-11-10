@@ -19,7 +19,7 @@
   margin-top: 0;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #ff4d4d;
+  color: var(--primary-color);
   position: relative;
   display: inline-block;
 }
@@ -31,13 +31,13 @@
   left: 0;
   width: 60%;
   height: 3px;
-  background: linear-gradient(90deg, #ff4d4d, transparent);
+  background: linear-gradient(90deg, var(--primary-color), transparent);
 }
 
 /* Highlight Box */
 .highlight-box {
-  background: linear-gradient(145deg, rgba(255, 77, 77, 0.1), transparent);
-  border-left: 3px solid #ff4d4d;
+  background: linear-gradient(145deg, rgba(196, 18, 48, 0.1), transparent);
+  border-left: 3px solid var(--primary-color);
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 0 8px 8px 0;
@@ -71,8 +71,8 @@
 
 .feature:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(255, 77, 77, 0.15);
-  border-color: rgba(255, 77, 77, 0.3);
+  box-shadow: 0 8px 30px rgba(196, 18, 48, 0.15);
+  border-color: rgba(196, 18, 48, 0.3);
 }
 
 .feature-icon {

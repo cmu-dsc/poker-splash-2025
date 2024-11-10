@@ -10,7 +10,7 @@
 
 .team-content h2 {
   font-size: 2.5rem;
-  color: #ff4d4d;
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -49,8 +49,8 @@
 
 .team-member:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(255, 77, 77, 0.15);
-  border-color: rgba(255, 77, 77, 0.3);
+  box-shadow: 0 8px 30px rgba(196, 18, 48, 0.15);
+  border-color: rgba(196, 18, 48, 0.3);
 }
 
 .team-member:hover::before {
@@ -120,7 +120,7 @@
 }
 
 .social-link:hover {
-  color: #ff4d4d;
+  color: var(--primary-color-hover);
 }
 
 @media (max-width: 768px) {

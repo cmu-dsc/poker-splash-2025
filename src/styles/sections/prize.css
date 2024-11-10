@@ -13,7 +13,7 @@
 
 .prize-content h2 {
   font-size: 2.5rem;
-  color: #ff4d4d;
+  color: var(--primary-color);
   margin-bottom: 3rem;
 }
 
@@ -40,7 +40,7 @@
 .prize-amount {
   font-size: 4.5rem;
   font-weight: bold;
-  color: #ff4d4d;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
@@ -214,7 +214,7 @@
 .lever-ball {
   width: 30px;
   height: 30px;
-  background: #ff4444;
+  background: var(--primary-color);
   border-radius: 50%;
   box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.3);
   position: relative;
