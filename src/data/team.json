@@ -1,0 +1,233 @@
+{
+  "leadership": [
+    {
+      "name": "Clement Ou",
+      "role": "Competitions Director & Lead Architect",
+      "image": "./images/team/clement.webp",
+      "imageFallback": "./images/team/clement.jpg",
+      "github": "https://github.com/clementou",
+      "linkedin": "https://linkedin.com/in/clementou"
+    },
+    {
+      "name": "Al Hassan",
+      "role": "DSC President",
+      "image": "./images/team/al.webp",
+      "imageFallback": "./images/team/al.png",
+      "github": "https://github.com/almutwakel",
+      "linkedin": "https://www.linkedin.com/in/almutwakel"
+    },
+    {
+      "name": "Emily Yu",
+      "role": "Project Manager",
+      "image": "./images/team/emily.webp",
+      "imageFallback": "./images/team/emily.png",
+      "github": "https://github.com/emshyu",
+      "linkedin": "https://www.linkedin.com/in/emily-yu-a28148204"
+    },
+    {
+      "name": "Dongkyun Kim",
+      "role": "Poker Lead",
+      "image": "./images/team/dk.webp",
+      "imageFallback": "./images/team/dk.jpg",
+      "github": "https://github.com/dongkyunk",
+      "linkedin": "https://www.linkedin.com/in/dongkyun-k"
+    },
+    {
+      "name": "Tobias Schamel",
+      "role": "Backend Lead",
+      "image": "./images/team/tobi.webp",
+      "imageFallback": "./images/team/tobi.png",
+      "github": "https://github.com/sirtobsi"
+    },
+    {
+      "name": "Elijah Baraw",
+      "role": "Platform Lead",
+      "image": "./images/team/elijah.webp",
+      "imageFallback": "./images/team/elijah.jpeg",
+      "github": "https://github.com/elijah-bae-raw",
+      "linkedin": "https://www.linkedin.com/in/elijah-baraw"
+    },
+    {
+      "name": "Mia Li",
+      "role": "Frontend Lead",
+      "github": "https://github.com/mhli1260",
+      "linkedin": "https://www.linkedin.com/in/mia-li-167901246/"
+    },
+    {
+      "name": "Varrshitha Kumar",
+      "role": "Design Director",
+      "image": "./images/team/varr.webp",
+      "imageFallback": "./images/team/varr.jpeg",
+      "github": "https://github.com/varrkumar",
+      "linkedin": "https://www.linkedin.com/in/varrkumar"
+    },
+    {
+      "name": "Bo Xie",
+      "role": "Design Director",
+      "image": "./images/team/bo.webp",
+      "imageFallback": "./images/team/bo.png",
+      "github": "https://github.com/bobofishbo",
+      "linkedin": "https://www.linkedin.com/in/bo-xie-918761291"
+    },
+    {
+      "name": "Jei Park",
+      "role": "Branding Director",
+      "image": "./images/team/jei.webp",
+      "imageFallback": "./images/team/jei.png",
+      "github": "https://github.com/jeih",
+      "linkedin": "https://www.linkedin.com/in/jehyo-jei-park"
+    },
+    {
+      "name": "Grace Lin",
+      "role": "DSC Vice President",
+      "image": "./images/team/grace.webp",
+      "imageFallback": "./images/team/grace.png",
+      "github": "https://github.com/gxlin2",
+      "linkedin": "https://www.linkedin.com/in/gracexlin/"
+    },
+    {
+      "name": "Oliver Yun",
+      "role": "Finance Director",
+      "image": "./images/team/oliver.webp",
+      "imageFallback": "./images/team/oliver.jpg",
+      "github": "https://github.com/oliveryun11",
+      "linkedin": "https://www.linkedin.com/in/oliver-yun-474b77289"
+    },
+    {
+      "name": "Juny Kim",
+      "role": "Operations Director",
+      "image": "./images/team/juny.webp",
+      "imageFallback": "./images/team/juny.png",
+      "github": "https://github.com/jkim999",
+      "linkedin": "https://www.linkedin.com/in/junykim1"
+    }
+  ],
+  "developers": [
+    {
+      "name": "Aadi Kuchlous",
+      "role": "Frontend Dev",
+      "image": "./images/team/aadi.webp",
+      "imageFallback": "./images/team/aadi.jpg",
+      "github": "https://github.com/AadiKuchlous",
+      "linkedin": "https://www.linkedin.com/in/aadikuchlous"
+    },
+    {
+      "name": "Simon Corpuz",
+      "role": "Backend Dev",
+      "image": "./images/team/simon.webp",
+      "imageFallback": "./images/team/simon.jpg",
+      "github": "https://github.com/SiCorp560",
+      "linkedin": "https://www.linkedin.com/in/simon-corpuz-78047822b"
+    },
+    {
+      "name": "Tchegnon Adjagbodjou",
+      "role": "Backend Dev",
+      "image": "./images/team/tche.webp",
+      "imageFallback": "./images/team/tche.jpg",
+      "github": "https://github.com/AbhishekKommineni"
+    },
+    {
+      "name": "Martin Cheong",
+      "role": "Backend Dev",
+      "image": "./images/team/martin.webp",
+      "imageFallback": "./images/team/martin.jpg",
+      "github": "https://github.com/mjeong246"
+    },
+    {
+      "name": "Rahul Muppavarapu",
+      "role": "Backend Dev",
+      "image": "./images/team/rahul.webp",
+      "imageFallback": "./images/team/rahul.jpg",
+      "github": "https://github.com/rahulmupp"
+    },
+    {
+      "name": "Tait Duan",
+      "role": "Backend Dev",
+      "image": "./images/team/tait.webp",
+      "imageFallback": "./images/team/tait.jpeg",
+      "github": "https://github.com/DunaTaikee"
+    },
+    {
+      "name": "Param Damle",
+      "role": "Platform Dev",
+      "image": "./images/team/param.webp",
+      "imageFallback": "./images/team/param.png",
+      "github": "https://github.com/paramsdamle",
+      "linkedin": "https://www.linkedin.com/in/paramdamle"
+    },
+    {
+      "name": "Christopher Singer",
+      "role": "Platform Dev",
+      "image": "./images/team/chris.webp",
+      "imageFallback": "./images/team/chris.jpg",
+      "github": "https://github.com/singer124"
+    },
+    {
+      "name": "Mark Park",
+      "role": "Platform Dev",
+      "image": "./images/team/mark.webp",
+      "imageFallback": "./images/team/mark.jpg",
+      "github": "https://github.com/cjmpark"
+    },
+    {
+      "name": "Jacky Huang",
+      "role": "Platform Dev",
+      "image": "./images/team/jacky.webp",
+      "imageFallback": "./images/team/jacky.jpg",
+      "github": "https://github.com/jackyhxz"
+    },
+    {
+      "name": "Edward Brownhill",
+      "role": "Platform Dev",
+      "image": "./images/team/edward.webp",
+      "imageFallback": "./images/team/edward.jpg",
+      "github": "https://github.com/ebrownhi"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Eric Zheng",
+      "role": "Poker Club President '24",
+      "image": "./images/alumni/eric.webp",
+      "imageFallback": "./images/alumni/eric.png",
+      "linkedin": "https://www.linkedin.com/in/eric-zheng-045976224"
+    },
+    {
+      "name": "Shiva Oswal",
+      "role": "Education Director '24",
+      "image": "./images/alumni/shiva.webp",
+      "imageFallback": "./images/alumni/shiva.png",
+      "github": "https://github.com/Agnimandur",
+      "linkedin": "https://www.linkedin.com/in/shivaoswal"
+    },
+    {
+      "name": "Jessica Ruan",
+      "role": "Cloud Dev '24",
+      "image": "./images/alumni/jessica.webp",
+      "imageFallback": "./images/alumni/jessica.png",
+      "github": "https://github.com/jespiron",
+      "linkedin": "https://www.linkedin.com/in/jessica-ruan"
+    },
+    {
+      "name": "Claire Liu",
+      "role": "Frontend Dev '24",
+      "image": "./images/alumni/claire.webp",
+      "imageFallback": "./images/alumni/claire.png",
+      "linkedin": "https://www.linkedin.com/in/claire-liu-b957861b0"
+    },
+    {
+      "name": "Suha Niyas",
+      "role": "Design Director '24",
+      "image": "./images/alumni/suha.webp",
+      "imageFallback": "./images/alumni/suha.jpg",
+      "linkedin": "https://www.linkedin.com/in/suha-niyas"
+    },
+    {
+      "name": "Wenhan Li",
+      "role": "Frontend Dev '24",
+      "image": "./images/alumni/wenhan.webp",
+      "imageFallback": "./images/alumni/wenhan.png",
+      "linkedin": "https://www.linkedin.com/in/wenhan-li-40495624b"
+    }
+  ]
+}

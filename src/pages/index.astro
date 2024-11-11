@@ -8,6 +8,7 @@ import TeamMember from "../components/TeamMember.astro";
 import "../styles/animations.css";
 import "../styles/global.css";
 import "../styles/sections/about.css";
+import "../styles/sections/sponsors.css";
 import "../styles/sections/faq.css";
 import "../styles/sections/footer.css";
 import "../styles/sections/prize.css";
@@ -15,6 +16,7 @@ import "../styles/sections/rules.css";
 import "../styles/sections/team.css";
 import "../styles/sections/timeline.css";
 import "../styles/sections/title.css";
+import teamData from "../data/team.json";
 ---
 
 <html lang="en">
@@ -23,9 +25,9 @@ import "../styles/sections/title.css";
 		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>CMU Intercollegiate AI Poker Tournament</title>
+		<title>CMU AI Poker Tournament</title>
 		<SEO
-			title="CMU Intercollegiate AI Poker Tournament"
+			title="CMU AI Poker Tournament"
 			description="Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent. Hosted by CMU Data Science Club."
 		/>
 
@@ -42,7 +44,7 @@ import "../styles/sections/title.css";
 			{
 				"@context": "https://schema.org",
 				"@type": "Event",
-				"name": "CMU Intercollegiate AI Poker Tournament",
+				"name": "CMU AI Poker Tournament",
 				"description": "Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent.",
 				"startDate": "2024-11-01",
 				"endDate": "2025-03-31",
@@ -84,6 +86,7 @@ import "../styles/sections/title.css";
 	</head>
 	<body>
 		<main>
+			<div class="background-particles"></div>
 			<section class="title-section">
 				<div class="title-content">
 					<div class="logos">
@@ -122,65 +125,61 @@ import "../styles/sections/title.css";
 
 			<section class="about-section">
 				<div class="about-content">
-					<div class="about-left">
-						<div class="about-text">
-							<h2>About the Competition</h2>
-							<div class="highlight-box">
-								<p class="lead">
-									Build an AI poker agent and compete for $100,000 in prizes.
-									Test your skills in machine learning and game theory against
-									top university talent.
-								</p>
-							</div>
-							<div class="feature-points">
-								<div class="feature">
-									<span class="feature-icon">🏆</span>
-									<p>
-										Battle in an advanced poker variant with direct recruiting
-										opportunities from Jump Trading. Hosted by CMU Data Science
-										Club.
-									</p>
-								</div>
-								<div class="feature">
-									<span class="feature-icon">🌟</span>
-									<p>
-										Compete online and advance to the finals at Jump Trading's
-										Chicago HQ. Full development support provided.
-									</p>
-								</div>
-							</div>
+					<div class="about-header">
+						<h2>About the Competition</h2>
+						<p class="lead">
+							Build an AI poker agent and compete for $100,000 in prizes. Test
+							your skills in machine learning and game theory against top
+							university talent.
+						</p>
+					</div>
+
+					<div class="features-grid">
+						<div class="feature-card">
+							<h3 class="feature-title">Career Opportunities</h3>
+							<p class="feature-description">
+								Direct recruiting opportunities with Jump Trading for top
+								performers. Network with industry professionals and showcase
+								your skills to potential employers.
+							</p>
+						</div>
+
+						<div class="feature-card">
+							<h3 class="feature-title">Hybrid Format</h3>
+							<p class="feature-description">
+								Compete online during the main competition and advance to the
+								finals at Jump Trading's Chicago headquarters. Full development
+								support and documentation provided throughout the competition.
+							</p>
 						</div>
 					</div>
-					<div class="about-right">
-						<div class="video-container">
-							<iframe
-								width="560"
-								height="315"
-								src="https://www.youtube.com/embed/your-video-id"
-								title="Competition Video"
-								style="border: 0;"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							>
-							</iframe>
-						</div>
+
+					<div class="sponsors-section">
 						<div class="sponsors">
-							<div class="club-logo">
-								<img
-									src="./images/logos/cmudsc.png"
-									alt="CMU Data Science Club Logo"
-									width="133"
-									height="150"
-								/>
-							</div>
-							<div class="sponsor-logo">
+							<a
+								href="https://jumptrading.com"
+								class="sponsor-link"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<img
 									src="./images/logos/jump-trading.png"
 									alt="Jump Trading Logo"
-									width="185"
-									height="150"
+									class="sponsor-logo"
 								/>
-							</div>
+							</a>
+							<a
+								href="https://cmudsc.com"
+								class="sponsor-link"
+								target="_blank"
+								rel="noopener"
+							>
+								<img
+									src="./images/logos/cmudsc.png"
+									alt="CMU Data Science Club Logo"
+									class="club-logo"
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -427,107 +426,7 @@ import "../styles/sections/title.css";
 				<div class="team-content">
 					<h2>Leadership</h2>
 					<div class="team-grid">
-						<TeamMember
-							name="Clement Ou"
-							role="Competitions Director & Lead Architect"
-							image="./images/team/clement.webp"
-							imageFallback="./images/team/clement.jpg"
-							github="https://github.com/clementou"
-							linkedin="https://linkedin.com/in/clementou"
-						/>
-						<TeamMember
-							name="Al Hassan"
-							role="DSC President"
-							image="./images/team/al.webp"
-							imageFallback="./images/team/al.png"
-							github="https://github.com/almutwakel"
-							linkedin="https://www.linkedin.com/in/almutwakel"
-						/>
-						<TeamMember
-							name="Emily Yu"
-							role="Project Manager"
-							image="./images/team/emily.webp"
-							imageFallback="./images/team/emily.png"
-							github="https://github.com/emshyu"
-							linkedin="https://www.linkedin.com/in/emily-yu-a28148204"
-						/>
-						<TeamMember
-							name="Dongkyun Kim"
-							role="Poker Lead"
-							image="./images/team/dk.webp"
-							imageFallback="./images/team/dk.jpg"
-							github="https://github.com/dongkyunk"
-							linkedin="https://www.linkedin.com/in/dongkyun-k"
-						/>
-						<TeamMember
-							name="Tobias Schamel"
-							role="Backend Lead"
-							image="./images/team/tobi.webp"
-							imageFallback="./images/team/tobi.png"
-							github="https://github.com/sirtobsi"
-						/>
-						<TeamMember
-							name="Elijah Baraw"
-							role="Platform Lead"
-							image="./images/team/elijah.webp"
-							imageFallback="./images/team/elijah.jpeg"
-							github="https://github.com/elijah-bae-raw"
-							linkedin="https://www.linkedin.com/in/elijah-baraw"
-						/>
-						<TeamMember
-							name="Mia Li"
-							role="Frontend Lead"
-							github="https://github.com/mhli1260"
-							linkedin="https://www.linkedin.com/in/mia-li-167901246/"
-						/>
-						<TeamMember
-							name="Varrshitha Kumar"
-							role="Design Director"
-							image="./images/team/varr.webp"
-							imageFallback="./images/team/varr.jpeg"
-							github="https://github.com/varrkumar"
-							linkedin="https://www.linkedin.com/in/varrkumar"
-						/>
-						<TeamMember
-							name="Bo Xie"
-							role="Design Director"
-							image="./images/team/bo.webp"
-							imageFallback="./images/team/bo.png"
-							github="https://github.com/bobofishbo"
-							linkedin="https://www.linkedin.com/in/bo-xie-918761291"
-						/>
-						<TeamMember
-							name="Jei Park"
-							role="Branding Director"
-							image="./images/team/jei.webp"
-							imageFallback="./images/team/jei.png"
-							github="https://github.com/jeih"
-							linkedin="https://www.linkedin.com/in/jehyo-jei-park"
-						/>
-						<TeamMember
-							name="Grace Lin"
-							role="DSC Vice President"
-							image="./images/team/grace.webp"
-							imageFallback="./images/team/grace.png"
-							github="https://github.com/gxlin2"
-							linkedin="https://www.linkedin.com/in/gracexlin/"
-						/>
-						<TeamMember
-							name="Oliver Yun"
-							role="Finance Director"
-							image="./images/team/oliver.webp"
-							imageFallback="./images/team/oliver.jpg"
-							github="https://github.com/oliveryun11"
-							linkedin="https://www.linkedin.com/in/oliver-yun-474b77289"
-						/>
-						<TeamMember
-							name="Juny Kim"
-							role="Operations Director"
-							image="./images/team/juny.webp"
-							imageFallback="./images/team/juny.png"
-							github="https://github.com/jkim999"
-							linkedin="https://www.linkedin.com/in/junykim1"
-						/>
+						{teamData.leadership.map((member) => <TeamMember {...member} />)}
 					</div>
 				</div>
 			</section>
@@ -536,86 +435,7 @@ import "../styles/sections/title.css";
 				<div class="team-content">
 					<h2>Developers</h2>
 					<div class="team-grid">
-						<TeamMember
-							name="Aadi Kuchlous"
-							role="Frontend Dev"
-							image="./images/team/aadi_kuchlous.webp"
-							imageFallback="./images/team/aadi_kuchlous.jpg"
-							github="https://github.com/AadiKuchlous"
-							linkedin="https://www.linkedin.com/in/aadikuchlous"
-						/>
-						<TeamMember
-							name="Simon Corpuz"
-							role="Backend Dev"
-							image="./images/team/simon_corpuz.webp"
-							imageFallback="./images/team/simon_corpuz.jpg"
-							github="https://github.com/SiCorp560"
-							linkedin="https://www.linkedin.com/in/simon-corpuz-78047822b"
-						/>
-						<TeamMember
-							name="Tchegnon Adjagbodjou"
-							role="Backend Dev"
-							image="./images/team/tchegnon_adjagbodjou.webp"
-							imageFallback="./images/team/tchegnon_adjagbodjou.jpg"
-							github="https://github.com/AbhishekKommineni"
-						/>
-						<TeamMember
-							name="Martin Cheong"
-							role="Backend Dev"
-							image="./images/team/martin_cheong.webp"
-							imageFallback="./images/team/martin_cheong.jpg"
-							github="https://github.com/mjeong246"
-						/>
-						<TeamMember
-							name="Rahul Muppavarapu"
-							role="Backend Dev"
-							image="./images/team/Rahul_Muppavarapu.webp"
-							imageFallback="./images/team/rahul_muppavarapu.jpg"
-							github="https://github.com/rahulmupp"
-						/>
-						<TeamMember
-							name="Tait Duan"
-							role="Backend Dev"
-							image="./images/team/tait.webp"
-							imageFallback="./images/team/tait.jpeg"
-							github="https://github.com/DunaTaikee"
-						/>
-						<TeamMember
-							name="Param Damle"
-							role="Platform Dev"
-							github="https://github.com/paramsdamle"
-							linkedin="https://www.linkedin.com/in/paramdamle"
-							image="./images/team/param.webp"
-							imageFallback="./images/team/param.png"
-						/>
-						<TeamMember
-							name="Christopher Singer"
-							role="Platform Dev"
-							image="./images/team/christopher_singer.webp"
-							imageFallback="./images/team/christopher_singer.jpg"
-							github="https://github.com/singer124"
-						/>
-						<TeamMember
-							name="Mark Park"
-							role="Platform Dev"
-							image="./images/team/mark_park.webp"
-							imageFallback="./images/team/mark_park.jpg"
-							github="https://github.com/cjmpark"
-						/>
-						<TeamMember
-							name="Jacky Huang"
-							role="Platform Dev"
-							image="./images/team/jacky_huang.webp"
-							imageFallback="./images/team/jacky_huang.jpg"
-							github="https://github.com/jackyhxz"
-						/>
-						<TeamMember
-							name="Edward Brownhill"
-							role="Platform Dev"
-							image="./images/team/edward_brownhill.webp"
-							imageFallback="./images/team/edward_brownhill.jpg"
-							github="https://github.com/ebrownhi"
-						/>
+						{teamData.developers.map((member) => <TeamMember {...member} />)}
 					</div>
 				</div>
 			</section>
@@ -624,50 +444,7 @@ import "../styles/sections/title.css";
 				<div class="team-content">
 					<h2>Alumni</h2>
 					<div class="team-grid">
-						<TeamMember
-							name="Eric Zheng"
-							role="Poker Club President '24"
-							image="./images/alumni/eric.webp"
-							imageFallback="./images/alumni/eric.png"
-							linkedin="https://www.linkedin.com/in/eric-zheng-045976224"
-						/>
-						<TeamMember
-							name="Shiva Oswal"
-							role="Education Director '24"
-							image="./images/alumni/shiva.webp"
-							imageFallback="./images/alumni/shiva.png"
-							github="https://github.com/Agnimandur"
-							linkedin="https://www.linkedin.com/in/shivaoswal"
-						/>
-						<TeamMember
-							name="Jessica Ruan"
-							role="Cloud Dev '24"
-							image="./images/alumni/jessica.webp"
-							imageFallback="./images/alumni/jessica.png"
-							github="https://github.com/jespiron"
-							linkedin="https://www.linkedin.com/in/jessica-ruan"
-						/>
-						<TeamMember
-							name="Claire Liu"
-							role="Frontend Dev '24"
-							image="./images/alumni/claire.webp"
-							imageFallback="./images/alumni/claire.png"
-							linkedin="https://www.linkedin.com/in/claire-liu-b957861b0"
-						/>
-						<TeamMember
-							name="Suha Niyas"
-							role="Design Director '24"
-							image="./images/alumni/suha.webp"
-							imageFallback="./images/alumni/suha.jpg"
-							linkedin="https://www.linkedin.com/in/suha-niyas"
-						/>
-						<TeamMember
-							name="Wenhan Li"
-							role="Frontend Dev '24"
-							image="./images/alumni/wenhan.webp"
-							imageFallback="./images/alumni/wenhan.png"
-							linkedin="https://www.linkedin.com/in/wenhan-li-40495624b"
-						/>
+						{teamData.alumni.map((member) => <TeamMember {...member} />)}
 					</div>
 				</div>
 			</section>

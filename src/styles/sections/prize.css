@@ -38,10 +38,12 @@
 }
 
 .prize-amount {
+  font-family: 'Unbounded', system-ui, sans-serif;
   font-size: 4.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  letter-spacing: -0.03em;
 }
 
 .total-text {
