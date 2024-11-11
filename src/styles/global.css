@@ -1,11 +1,23 @@
 /* Import fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&family=Outfit:wght@400&family=Inter:wght@200&family=Unbounded:wght@600&display=swap');
+
+:root {
+  --primary-color: #FF3333;
+  /* Your red color */
+  --primary-color-hover: #FF4D4D;
+  /* Slightly lighter version for hover states */
+  --primary-color-dark: #CC2929;
+  /* Darker version */
+  --primary-color-light: rgba(255, 51, 51, 0.15);
+  /* Transparent version */
+}
 
 /* Base styles that apply to the whole site */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
   background-color: #1a1a1a;
   color: white;
 }
@@ -25,16 +37,30 @@ section {
 /* Common heading styles */
 h2 {
   font-size: 2.5rem;
-  color: #ff4d4d;
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 3rem;
 }
 
 /* Heading styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+/* Special treatment for secondary headings */
+.feature-title,
+.faq-item summary,
+.footer-info h3,
+.rule-box h3 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
 }
 
 /* Special treatment for the main title */

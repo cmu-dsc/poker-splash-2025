@@ -1,34 +1,60 @@
-.sponsors {
+.partner-showcase {
+  margin-top: 6rem;
+  padding: 3rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 20px;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.partner-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 2rem 3rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 8rem;
+  padding: 2rem;
+  width: fit-content;
 }
 
-.club-logo,
-.sponsor-logo {
-  height: 150px;
+.partner-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.club-logo img,
-.sponsor-logo img {
-  height: 100%;
-  width: auto;
+.partner-item:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.partner-item img.org-logo {
+  width: 200px;
+  height: 138px;
+  object-fit: contain;
+}
+
+.partner-item img.company-logo {
+  width: 191px;
+  height: 138px;
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .sponsors {
-      padding: 1.5rem;
-      flex-direction: column;
-      gap: 2rem;
+  .partner-grid {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
   }
 
-  .club-logo,
-  .sponsor-logo {
-      height: 100px;
+  .partner-item img.org-logo {
+    width: 145px;
+    height: 100px;
+  }
+
+  .partner-item img.company-logo {
+    width: 138px;
+    height: 100px;
   }
 }
