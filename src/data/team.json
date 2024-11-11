@@ -112,6 +112,13 @@
       "linkedin": "https://www.linkedin.com/in/aadikuchlous"
     },
     {
+      "name": "Lana Farkas",
+      "role": "Designer",
+      "image": "./images/team/lana.webp",
+      "imageFallback": "./images/team/lana.jpg",
+      "linkedin": "https://www.linkedin.com/in/lana-farkas-66bb0a246"
+    },
+    {
       "name": "Simon Corpuz",
       "role": "Backend Dev",
       "image": "./images/team/simon.webp",
