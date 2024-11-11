@@ -1,4 +1,4 @@
-.sponsors-section {
+.partner-showcase {
   margin-top: 6rem;
   padding: 3rem;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent);
@@ -8,7 +8,7 @@
   margin: 0 auto;
 }
 
-.sponsors {
+.partner-grid {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,45 +17,43 @@
   width: fit-content;
 }
 
-.sponsor-link {
+.partner-item {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.sponsor-link:hover {
+.partner-item:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
 
-/* CMU DSC logo (580x402 original) - scaled down proportionally */
-.sponsor-link img.club-logo {
+.partner-item img.org-logo {
   width: 200px;
   height: 138px;
   object-fit: contain;
 }
 
-/* Jump logo (366x264 original) - scaled to match CMU logo height */
-.sponsor-link img.sponsor-logo {
+.partner-item img.company-logo {
   width: 191px;
   height: 138px;
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .sponsors {
+  .partner-grid {
     padding: 1.5rem;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .sponsor-link img.club-logo {
+  .partner-item img.org-logo {
     width: 145px;
     height: 100px;
   }
 
-  .sponsor-link img.sponsor-logo {
+  .partner-item img.company-logo {
     width: 138px;
     height: 100px;
   }
