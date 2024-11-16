@@ -50,6 +50,8 @@
     {
       "name": "Mia Li",
       "role": "Frontend Lead",
+      "image": "./images/team/mia.webp",
+      "imageFallback": "./images/team/mia.jpeg",
       "github": "https://github.com/mhli1260",
       "linkedin": "https://www.linkedin.com/in/mia-li-167901246/"
     },
