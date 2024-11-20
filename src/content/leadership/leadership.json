@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Clement Ou",
+    "role": "Competitions Director & Lead Architect",
+    "image": "../../assets/team/clement.jpg",
+    "github": "https://github.com/clementou",
+    "linkedin": "https://linkedin.com/in/clementou"
+  },
+  {
+    "name": "Al Hassan",
+    "role": "DSC President",
+    "image": "../../assets/team/al.png",
+    "github": "https://github.com/almutwakel",
+    "linkedin": "https://www.linkedin.com/in/almutwakel"
+  },
+  {
+    "name": "Emily Yu",
+    "role": "Project Manager",
+    "image": "../../assets/team/emily.png",
+    "github": "https://github.com/emshyu",
+    "linkedin": "https://www.linkedin.com/in/emily-yu-a28148204"
+  },
+  {
+    "name": "Dongkyun Kim",
+    "role": "Poker Lead",
+    "image": "../../assets/team/dk.jpg",
+    "github": "https://github.com/dongkyunk",
+    "linkedin": "https://www.linkedin.com/in/dongkyun-k"
+  },
+  {
+    "name": "Tobias Schamel",
+    "role": "Backend Lead",
+    "image": "../../assets/team/tobi.png",
+    "github": "https://github.com/sirtobsi"
+  },
+  {
+    "name": "Elijah Baraw",
+    "role": "Platform Lead",
+    "image": "../../assets/team/elijah.jpeg",
+    "github": "https://github.com/elijah-bae-raw",
+    "linkedin": "https://www.linkedin.com/in/elijah-baraw"
+  },
+  {
+    "name": "Mia Li",
+    "role": "Frontend Lead",
+    "image": "../../assets/team/mia.jpg",
+    "github": "https://github.com/mhli1260",
+    "linkedin": "https://www.linkedin.com/in/mia-li-167901246/"
+  },
+  {
+    "name": "Varrshitha Kumar",
+    "role": "Design Director",
+    "image": "../../assets/team/varr.jpeg",
+    "github": "https://github.com/varrkumar",
+    "linkedin": "https://www.linkedin.com/in/varrkumar"
+  },
+  {
+    "name": "Bo Xie",
+    "role": "Design Director",
+    "image": "../../assets/team/bo.png",
+    "github": "https://github.com/bobofishbo",
+    "linkedin": "https://www.linkedin.com/in/bo-xie-918761291"
+  },
+  {
+    "name": "Jei Park",
+    "role": "Branding Director",
+    "image": "../../assets/team/jei.png",
+    "github": "https://github.com/jeih",
+    "linkedin": "https://www.linkedin.com/in/jehyo-jei-park"
+  },
+  {
+    "name": "Grace Lin",
+    "role": "DSC Vice President",
+    "image": "../../assets/team/grace.webp",
+    "github": "https://github.com/gxlin2",
+    "linkedin": "https://www.linkedin.com/in/gracexlin/"
+  },
+  {
+    "name": "Oliver Yun",
+    "role": "Finance Director",
+    "image": "../../assets/team/oliver.jpg",
+    "github": "https://github.com/oliveryun11",
+    "linkedin": "https://www.linkedin.com/in/oliver-yun-474b77289"
+  },
+  {
+    "name": "Juny Kim",
+    "role": "Operations Director",
+    "image": "../../assets/team/juny.png",
+    "github": "https://github.com/jkim999",
+    "linkedin": "https://www.linkedin.com/in/junykim1"
+  }
+]

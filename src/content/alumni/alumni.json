@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Eric Zheng",
+    "role": "Poker Club President '24",
+    "image": "../../assets/alumni/eric.png",
+    "linkedin": "https://www.linkedin.com/in/eric-zheng-045976224"
+  },
+  {
+    "name": "Shiva Oswal",
+    "role": "Education Director '24",
+    "image": "../../assets/alumni/shiva.png",
+    "github": "https://github.com/Agnimandur",
+    "linkedin": "https://www.linkedin.com/in/shivaoswal"
+  },
+  {
+    "name": "Jessica Ruan",
+    "role": "Cloud Dev '24",
+    "image": "../../assets/alumni/jessica.png",
+    "github": "https://github.com/jespiron",
+    "linkedin": "https://www.linkedin.com/in/jessica-ruan"
+  },
+  {
+    "name": "Claire Liu",
+    "role": "Frontend Dev '24",
+    "image": "../../assets/alumni/claire.png",
+    "linkedin": "https://www.linkedin.com/in/claire-liu-b957861b0"
+  },
+  {
+    "name": "Suha Niyas",
+    "role": "Design Director '24",
+    "image": "../../assets/alumni/suha.jpg",
+    "linkedin": "https://www.linkedin.com/in/suha-niyas"
+  },
+  {
+    "name": "Wenhan Li",
+    "role": "Frontend Dev '24",
+    "image": "../../assets/alumni/wenhan.png",
+    "linkedin": "https://www.linkedin.com/in/wenhan-li-40495624b"
+  }
+]

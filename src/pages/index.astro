@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import competitionLogo from "../assets/competition-logo.svg";
+import jumpLogo from "../assets/jump-new-logo.png";
 import EmailIcon from "../components/icons/EmailIcon.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LargeDiscordIcon from "../components/icons/LargeDiscordIcon.astro";
@@ -8,15 +12,18 @@ import TeamMember from "../components/TeamMember.astro";
 import "../styles/animations.css";
 import "../styles/global.css";
 import "../styles/sections/about.css";
-import "../styles/sections/sponsors.css";
-import "../styles/sections/faq.css";
-import "../styles/sections/footer.css";
 import "../styles/sections/prize.css";
 import "../styles/sections/rules.css";
-import "../styles/sections/team.css";
+import "../styles/sections/sponsors.css";
 import "../styles/sections/timeline.css";
-import "../styles/sections/title.css";
-import teamData from "../data/team.json";
+
+const [leadershipData] = await getCollection("leadership");
+const [developersData] = await getCollection("developers");
+const [alumniData] = await getCollection("alumni");
+
+const leadership = leadershipData.data;
+const developers = developersData.data;
+const alumni = alumniData.data;
 ---
 
 <html lang="en">
@@ -87,38 +94,65 @@ import teamData from "../data/team.json";
 	<body>
 		<main>
 			<div class="background-particles"></div>
-			<section class="title-section">
-				<div class="title-content">
-					<div class="logos">
-						<div class="competition-logo">
-							<img
-								src="./images/logos/competition-logo.svg"
+			<section
+				class="min-h-screen max-h-screen flex flex-col justify-start items-center relative overflow-hidden bg-gradient-to-b from-background-dark to-background-darker p-8"
+			>
+				<div
+					class="w-full max-w-7xl flex flex-col justify-start items-center pt-[8vh]"
+				>
+					<div class="w-full flex justify-center mb-8">
+						<div class="max-w-[300px] w-full">
+							<Image
+								src={competitionLogo}
 								alt="AI Poker Tournament Logo"
-								width="400"
-								height="400"
+								class="w-full h-auto block"
 							/>
 						</div>
 					</div>
 
-					<div class="title-main">
-						<h1>CMU Intercollegiate AI Poker Tournament</h1>
-						<div class="card-symbols">♠ ♥ 2025 ♣ ♦</div>
-						<p class="subtitle">Sponsored by Jump Trading</p>
+					<div class="text-center">
+						<h1
+							class="font-outfit font-bold text-5xl md:text-[3.5rem] text-primary tracking-[-0.02em] m-0"
+						>
+							CMU Intercollegiate AI Poker Tournament
+						</h1>
+						<div
+							class="font-space-grotesk text-2xl sm:text-3xl md:text-4xl tracking-[0.5rem] sm:tracking-[1rem] font-medium my-4"
+						>
+							♠ ♥ 2025 ♣ ♦
+						</div>
+						<div class="flex items-center justify-center gap-2">
+							<span class="text-white">Sponsored by</span>
+							<a
+								href="https://jumptrading.com"
+								data-umami-event="Jump Trading Logo Click"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Image
+									src={jumpLogo}
+									alt="Jump Trading"
+									class="h-14 w-auto"
+									format="webp"
+								/>
+							</a>
+						</div>
 
-						<div class="cta-buttons">
-							<a href="/register" class="cta-button primary">Register Now</a>
+						<div class="flex justify-center gap-4 mt-8">
+							<a
+								href="/register"
+								class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-lg text-white bg-primary hover:bg-primary-hover transition-all hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,51,51,0.6),0_0_40px_rgba(255,51,51,0.4),0_0_60px_rgba(255,51,51,0.2)] min-w-[130px]"
+							>
+								Register Now
+							</a>
 							<a
 								href="https://discord.gg/J9be7vVt5F"
-								class="cta-button discord"
+								class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-lg text-white bg-[#5865F2] hover:bg-[#4752c4] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(88,101,242,0.6),0_0_40px_rgba(88,101,242,0.4),0_0_60px_rgba(88,101,242,0.2)] min-w-[130px]"
 							>
 								<LargeDiscordIcon />
 								Join Discord
 							</a>
 						</div>
-					</div>
-
-					<div class="scroll-indicator">
-						<div class="scroll-arrow">↓</div>
 					</div>
 				</div>
 			</section>
@@ -323,52 +357,116 @@ import teamData from "../data/team.json";
 				</div>
 			</section>
 
-			<section class="faq-section">
-				<div class="faq-content">
-					<h2>Frequently Asked Questions</h2>
-					<div class="faq-grid">
-						<details class="faq-item">
-							<summary>What programming languages can I use?</summary>
-							<p>
-								You can use Python 3. Many common external libraries will be
+			<section class="bg-[#222] py-16 px-8">
+				<div class="max-w-[1000px] mx-auto">
+					<h2 class="text-4xl text-primary text-center mb-12">
+						Frequently Asked Questions
+					</h2>
+					<div class="grid gap-6 grid-cols-1 md:grid-cols-2">
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What programming languages can I use?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
+								You can use Python 3.12. Many common external libraries will be
 								available for use. If you'd like to use any others, you can
 								request them in our Discord.
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>How many people can be on a team?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								How many people can be on a team?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								Teams can be between 1 and 2 people from any U.S. university.
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>What poker variant will be used?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What poker variant will be used?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								The specific poker variant will be revealed when the competition
 								starts. It will be more complex than standard no-limit Texas
 								Hold 'em. The finals will feature a slightly different variant.
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>What are the prizes?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What are the prizes?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								The exact prize pool is still being finalized, but in total,
 								$100,000 will be split between finalists. Stay tuned for prize
 								announcements!
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>Is there a registration fee?</summary>
-							<p>No, participation in the competition is completely free.</p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								Is there a registration fee?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
+								No, participation in the competition is completely free.
+							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>What frameworks are supported?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What frameworks are supported?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								You only need to implement a simple interface we provide that
 								tells your bot when it's your turn to act. You're free to use
 								any approach you want - from simple rules to deep learning. For
@@ -378,9 +476,19 @@ import teamData from "../data/team.json";
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>How does the online phase work?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								How does the online phase work?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								During the online portion, matches will be run continuously with
 								approximately 20 matches per day per team. The matchmaking
 								system is TBD. Teams can request a limited number of additional
@@ -388,10 +496,20 @@ import teamData from "../data/team.json";
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>What happens at the finals?</summary>
-							<p>
-								The finals will be a 2-3 day in-person event at Jump Trading's
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What happens at the finals?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
+								The finals will be a 2 day in-person event at Jump Trading's
 								offices in Chicago. Teams will compete in a round-robin format
 								using a slightly modified variant of the game, with final
 								rankings determined by overall winrate. Finalists will also have
@@ -400,19 +518,38 @@ import teamData from "../data/team.json";
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>Can I prepare my bot before knowing the variant?</summary
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
 							>
-							<p>
+								Can I prepare my bot before knowing the variant?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								Yes, you can do whatever you want before the competition, but
 								you will likely have to make significant changes to work with
 								the custom variant.
 							</p>
 						</details>
 
-						<details class="faq-item">
-							<summary>What resources are provided?</summary>
-							<p>
+						<details
+							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
+						>
+							<summary
+								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
+							>
+								What resources are provided?
+								<span
+									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
+									>+</span
+								>
+							</summary>
+							<p class="mt-4 text-white/90 leading-relaxed">
 								We provide a complete development framework, documentation,
 								example bots, and weekly office hours with the organizing team.
 								You'll also have access to our Discord community for support.
@@ -422,75 +559,100 @@ import teamData from "../data/team.json";
 				</div>
 			</section>
 
-			<section class="team-section">
-				<div class="team-content">
-					<h2>Leadership</h2>
-					<div class="team-grid">
-						{teamData.leadership.map((member) => <TeamMember {...member} />)}
-					</div>
+			<section>
+				<h2>Leadership</h2>
+				<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
+					{leadership.map((member) => <TeamMember member={member} />)}
 				</div>
 			</section>
 
-			<section class="team-section developer-section">
-				<div class="team-content">
-					<h2>Developers</h2>
-					<div class="team-grid">
-						{teamData.developers.map((member) => <TeamMember {...member} />)}
-					</div>
+			<section>
+				<h2>Developers</h2>
+				<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
+					{developers.map((member) => <TeamMember member={member} />)}
 				</div>
 			</section>
 
-			<section class="team-section alumni-section">
-				<div class="team-content">
-					<h2>Alumni</h2>
-					<div class="team-grid">
-						{teamData.alumni.map((member) => <TeamMember {...member} />)}
-					</div>
+			<section>
+				<h2>Alumni</h2>
+				<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
+					{alumni.map((member) => <TeamMember member={member} />)}
 				</div>
 			</section>
-			<div class="footer-wrapper">
-				<div class="footer-content">
-					<div class="footer-info">
-						<h3>Contact Us</h3>
-						<ul class="contact-list">
-							<li>
+
+			<div class="relative z-10 bg-[#1a1a1a] py-6 px-6 -mt-8">
+				<div
+					class="max-w-6xl mx-auto flex flex-wrap justify-between items-start gap-6 md:flex-row flex-col md:items-start items-center text-center md:text-left"
+				>
+					<div class="flex-1 min-w-[250px] w-full md:w-auto">
+						<h3 class="text-primary text-lg mb-3">Contact Us</h3>
+						<ul
+							class="list-none p-0 m-0 flex flex-col items-center md:items-start gap-1.5"
+						>
+							<li
+								class="flex items-center gap-2 text-white/80 text-sm w-full justify-center md:justify-start"
+							>
 								<EmailIcon />
-								<a href="mailto:pokerai@cmudsc.com"
-									>pokerai@cmudsc.com</a
+								<a
+									href="mailto:pokerai@cmudsc.com"
+									class="text-white/80 hover:text-primary-hover transition-colors"
 								>
+									pokerai@cmudsc.com
+								</a>
 							</li>
-							<li>
+							<li
+								class="flex items-center gap-2 text-white/80 text-sm w-full justify-center md:justify-start"
+							>
 								<GithubIcon />
-								<a href="https://github.com/cmu-dsc" target="_blank"
-									>GitHub Org</a
+								<a
+									href="https://github.com/cmu-dsc"
+									target="_blank"
+									class="text-white/80 hover:text-primary-hover transition-colors"
 								>
+									GitHub Org
+								</a>
 							</li>
-							<li>
+							<li
+								class="flex items-center gap-2 text-white/80 text-sm w-full justify-center md:justify-start"
+							>
 								<SmallDiscordIcon />
-								<a href="https://discord.gg/J9be7vVt5F" target="_blank"
-									>Join our Discord</a
+								<a
+									href="https://discord.gg/J9be7vVt5F"
+									target="_blank"
+									class="text-white/80 hover:text-primary-hover transition-colors"
 								>
+									Join our Discord
+								</a>
 							</li>
 						</ul>
 					</div>
-					<div class="footer-info">
-						<h3>CMU Location</h3>
-						<ul class="contact-list">
-							<li>Carnegie Mellon University</li>
-							<li>5000 Forbes Avenue</li>
-							<li>Pittsburgh, PA 15213</li>
+
+					<div class="flex-1 min-w-[250px] w-full md:w-auto">
+						<h3 class="text-primary text-lg mb-3">CMU Location</h3>
+						<ul
+							class="list-none p-0 m-0 flex flex-col items-center md:items-start gap-1.5"
+						>
+							<li class="text-white/80 text-sm">Carnegie Mellon University</li>
+							<li class="text-white/80 text-sm">5000 Forbes Avenue</li>
+							<li class="text-white/80 text-sm">Pittsburgh, PA 15213</li>
 						</ul>
 					</div>
-					<div class="footer-info">
-						<h3>Jump Trading Location</h3>
-						<ul class="contact-list">
-							<li>Jump Trading</li>
-							<li>600 W Chicago Ave</li>
-							<li>Chicago, IL 60654</li>
+
+					<div class="flex-1 min-w-[250px] w-full md:w-auto">
+						<h3 class="text-primary text-lg mb-3">Jump Trading Location</h3>
+						<ul
+							class="list-none p-0 m-0 flex flex-col items-center md:items-start gap-1.5"
+						>
+							<li class="text-white/80 text-sm">Jump Trading</li>
+							<li class="text-white/80 text-sm">600 W Chicago Ave</li>
+							<li class="text-white/80 text-sm">Chicago, IL 60654</li>
 						</ul>
 					</div>
-					<div class="copyright">
-						© {new Date().getFullYear()} CMU Data Science Club. All rights reserved.
+
+					<div class="w-full text-center mt-6 pt-3 border-t border-white/10">
+						<p class="text-white/60 text-sm">
+							© {new Date().getFullYear()} CMU Data Science Club. All rights reserved.
+						</p>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Aadi Kuchlous",
+    "role": "Frontend Dev",
+    "image": "../../assets/devs/aadi.jpg",
+    "github": "https://github.com/AadiKuchlous",
+    "linkedin": "https://www.linkedin.com/in/aadikuchlous"
+  },
+  {
+    "name": "Lana Farkas",
+    "role": "Designer",
+    "image": "../../assets/devs/lana.jpg",
+    "linkedin": "https://www.linkedin.com/in/lana-farkas-66bb0a246"
+  },
+  {
+    "name": "Simon Corpuz",
+    "role": "Backend Dev",
+    "image": "../../assets/devs/simon.jpg",
+    "github": "https://github.com/SiCorp560",
+    "linkedin": "https://www.linkedin.com/in/simon-corpuz-78047822b"
+  },
+  {
+    "name": "Tchegnon Adjagbodjou",
+    "role": "Backend Dev",
+    "image": "../../assets/devs/tche.jpg",
+    "github": "https://github.com/AbhishekKommineni"
+  },
+  {
+    "name": "Martin Cheong",
+    "role": "Backend Dev",
+    "image": "../../assets/devs/martin.jpg",
+    "github": "https://github.com/mjeong246"
+  },
+  {
+    "name": "Rahul Muppavarapu",
+    "role": "Backend Dev",
+    "image": "../../assets/devs/rahul.jpg",
+    "github": "https://github.com/rahulmupp"
+  },
+  {
+    "name": "Tait Duan",
+    "role": "Backend Dev",
+    "image": "../../assets/devs/tait.jpeg",
+    "github": "https://github.com/DunaTaikee"
+  },
+  {
+    "name": "Param Damle",
+    "role": "Platform Dev",
+    "image": "../../assets/devs/param.png",
+    "github": "https://github.com/paramsdamle",
+    "linkedin": "https://www.linkedin.com/in/paramdamle"
+  },
+  {
+    "name": "Christopher Singer",
+    "role": "Platform Dev",
+    "image": "../../assets/devs/chris.jpg",
+    "github": "https://github.com/singer124"
+  },
+  {
+    "name": "Mark Park",
+    "role": "Platform Dev",
+    "image": "../../assets/devs/mark.jpg",
+    "github": "https://github.com/cjmpark"
+  },
+  {
+    "name": "Jacky Huang",
+    "role": "Platform Dev",
+    "image": "../../assets/devs/jacky.jpg",
+    "github": "https://github.com/jackyhxz"
+  },
+  {
+    "name": "Edward Brownhill",
+    "role": "Platform Dev",
+    "image": "../../assets/devs/edward.jpg",
+    "github": "https://github.com/ebrownhi"
+  }
+]
