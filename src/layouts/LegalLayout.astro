@@ -1,0 +1,191 @@
+---
+import SEO from "../components/SEO.astro";
+import "../styles/global.css";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+  };
+  headings: {
+    depth: number;
+    slug: string;
+    text: string;
+  }[];
+}
+
+const { frontmatter, headings } = Astro.props;
+const { title, description } = frontmatter;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - CMU AI Poker Tournament</title>
+    <SEO title={title} description={description} />
+  </head>
+  <body>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12">
+        <!-- Table of Contents - hidden on mobile -->
+        {
+          headings && headings.length > 0 && (
+            <aside class="hidden md:block md:sticky md:top-6 h-fit max-h-[calc(100vh-4rem)] bg-[#222] rounded-lg p-6">
+              <h2 class="text-primary text-xl font-semibold mb-4">
+                Table of Contents
+              </h2>
+              <nav class="toc overflow-y-auto max-h-[calc(100vh-12rem)]">
+                <ul class="space-y-3">
+                  {headings.map((heading) => (
+                    <li
+                      class:list={[
+                        "text-white/80 hover:text-primary-hover transition-colors",
+                        { "ml-4": heading.depth === 3 },
+                        { "ml-6": heading.depth === 4 },
+                      ]}
+                    >
+                      <a href={`#${heading.slug}`}>{heading.text}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </aside>
+          )
+        }
+
+        <!-- Main Content -->
+        <div class="prose prose-invert max-w-none">
+          <slot />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  .prose {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    color: var(--primary-color);
+    scroll-margin-top: 1rem;
+  }
+
+  .prose a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: var(--primary-color-hover);
+  }
+
+  .toc a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    aside {
+      order: 2;
+    }
+    .prose {
+      order: 1;
+    }
+  }
+
+  /* Add styles for active TOC link */
+  .toc a.text-primary {
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  // Highlight current section in TOC
+  const observerOptions = {
+    rootMargin: '-100px 0px -66%',
+    threshold: [0, 1.0]
+  };
+
+  const tocLinks = document.querySelectorAll('.toc a');
+  let currentActiveLink: Element | null = null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
+      
+      if (entry.isIntersecting && entry.intersectionRatio > 0) {
+        // Remove active class from previous link
+        if (currentActiveLink) {
+          currentActiveLink.classList.remove('text-primary');
+        }
+        
+        // Add active class to current section's TOC link
+        if (tocLink) {
+          tocLink.classList.add('text-primary');
+          currentActiveLink = tocLink;
+          
+          // Scroll the TOC to keep the active link in view
+          const tocNav = document.querySelector('.toc');
+          if (tocNav) {
+            const tocRect = tocNav.getBoundingClientRect();
+            const linkRect = tocLink.getBoundingClientRect();
+            
+            // Check if the link is outside the visible area of the TOC
+            if (linkRect.top < tocRect.top || linkRect.bottom > tocRect.bottom) {
+              tocLink.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+              });
+            }
+          }
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all headings
+  document.querySelectorAll('h1[id], h2[id], h3[id], h4[id]').forEach((heading) => {
+    observer.observe(heading);
+  });
+
+  // Add smooth scrolling to TOC links
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          // Update URL without jumping
+          history.pushState(null, '', href);
+        }
+      }
+    });
+  });
+
+  // Update active link on page load if URL has hash
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      const initialLink = document.querySelector(`.toc a[href="${window.location.hash}"]`);
+      if (initialLink) {
+        initialLink.classList.add('text-primary');
+        currentActiveLink = initialLink;
+        // Scroll the initial link into view
+        initialLink.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    }
+  });
+</script>
