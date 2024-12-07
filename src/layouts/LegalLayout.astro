@@ -108,42 +108,56 @@ const { title, description } = frontmatter;
 </style>
 
 <script>
+  // Helper function to escape CSS selectors
+  function escapeSelector(selector: string) {
+    return selector.replace(/^[0-9]/, "\\3$&");
+  }
+
   // Highlight current section in TOC
   const observerOptions = {
-    rootMargin: '-100px 0px -66%',
-    threshold: [0, 1.0]
+    rootMargin: "-100px 0px -66%",
+    threshold: [0, 1.0],
   };
 
-  const tocLinks = document.querySelectorAll('.toc a');
+  const tocLinks = document.querySelectorAll(".toc a");
   let currentActiveLink: Element | null = null;
+  let isManualScroll = false;
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
+    if (isManualScroll) return; // Don't update during manual scrolling
+
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
       const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
-      
+
       if (entry.isIntersecting && entry.intersectionRatio > 0) {
         // Remove active class from previous link
         if (currentActiveLink) {
-          currentActiveLink.classList.remove('text-primary');
+          currentActiveLink.classList.remove("text-primary");
         }
-        
+
         // Add active class to current section's TOC link
         if (tocLink) {
-          tocLink.classList.add('text-primary');
+          tocLink.classList.add("text-primary");
           currentActiveLink = tocLink;
-          
-          // Scroll the TOC to keep the active link in view
-          const tocNav = document.querySelector('.toc');
+
+          // Scroll the TOC to keep the active link in view, but only if it's out of view
+          const tocNav = document.querySelector(".toc");
           if (tocNav) {
             const tocRect = tocNav.getBoundingClientRect();
             const linkRect = tocLink.getBoundingClientRect();
-            
-            // Check if the link is outside the visible area of the TOC
-            if (linkRect.top < tocRect.top || linkRect.bottom > tocRect.bottom) {
-              tocLink.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
+
+            if (
+              linkRect.top < tocRect.top ||
+              linkRect.bottom > tocRect.bottom
+            ) {
+              // Use instant scroll instead of smooth scroll
+              tocNav.scrollTo({
+                top:
+                  tocNav.scrollTop +
+                  (linkRect.top - tocRect.top) -
+                  tocRect.height / 2,
+                behavior: "instant",
               });
             }
           }
@@ -153,39 +167,71 @@ const { title, description } = frontmatter;
   }, observerOptions);
 
   // Observe all headings
-  document.querySelectorAll('h1[id], h2[id], h3[id], h4[id]').forEach((heading) => {
-    observer.observe(heading);
-  });
+  document
+    .querySelectorAll("h1[id], h2[id], h3[id], h4[id]")
+    .forEach((heading) => {
+      observer.observe(heading);
+    });
 
-  // Add smooth scrolling to TOC links
-  tocLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+  // Add click handling to TOC links
+  tocLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const href = link.getAttribute('href');
+      isManualScroll = true;
+
+      const href = link.getAttribute("href");
       if (href) {
-        const target = document.querySelector(href);
+        // Escape the selector for querySelector
+        const escapedHref = escapeSelector(href.substring(1)); // Remove # and escape
+        const target = document.querySelector(`#${escapedHref}`);
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-          // Update URL without jumping
-          history.pushState(null, '', href);
+          // Update active link immediately
+          if (currentActiveLink) {
+            currentActiveLink.classList.remove("text-primary");
+          }
+          link.classList.add("text-primary");
+          currentActiveLink = link;
+
+          // Smooth scroll to target
+          target.scrollIntoView({ behavior: "smooth" });
+          history.pushState(null, "", href);
+
+          // Reset manual scroll flag after animation
+          setTimeout(() => {
+            isManualScroll = false;
+          }, 1000);
         }
       }
     });
   });
 
-  // Update active link on page load if URL has hash
-  window.addEventListener('load', () => {
+  // Handle initial hash on page load
+  window.addEventListener("load", () => {
     if (window.location.hash) {
-      const initialLink = document.querySelector(`.toc a[href="${window.location.hash}"]`);
+      const escapedHash = escapeSelector(window.location.hash.substring(1));
+      const initialLink = document.querySelector(
+        `.toc a[href="#${escapedHash}"]`,
+      );
       if (initialLink) {
-        initialLink.classList.add('text-primary');
+        initialLink.classList.add("text-primary");
         currentActiveLink = initialLink;
-        // Scroll the initial link into view
-        initialLink.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+
+        // Scroll the TOC instantly without animation
+        initialLink.scrollIntoView({ block: "center", behavior: "instant" });
       }
     }
   });
+
+  // Reset manual scroll flag when user stops scrolling
+  let scrollTimeout: number;
+  window.addEventListener(
+    "scroll",
+    () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isManualScroll = false;
+      }, 150) as unknown as number;
+    },
+    { passive: true },
+  );
 </script>

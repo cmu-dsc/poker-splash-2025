@@ -23,8 +23,7 @@ This document contains the complete rules and requirements for participation in 
 - "Ranked Qualifier" means any of the top 10 teams from the Online Competition Phase
 - "Wildcard Qualifier" means either of the two additional teams selected by Jump Trading
 - "Active Version" means the specific version of a Team's Bot designated for current matches
-- "Time Bank" means the total allowed computation time (7 minutes wall clock) per Bot per Match
-- "Whitelisted University" means an educational institution listed at poker.cmudsc.com/eligible-schools
+- "Time Bank" means the total allowed computation time per Bot per Match (1500 seconds wall clock for standard bots, 2000 seconds wall clock for qualified bots that have beaten ProbabilityAgent)
 - "Discord" means the official Competition Discord server at discord.gg/cmudsc-poker
 - "Hand" means a single round of poker from dealing of cards through showdown or fold, including:
   - Dealing of hole cards
@@ -104,7 +103,9 @@ The Competition consists of multiple phases with different participation require
 - Small blind: 1 chip
 - Big blind: 2 chips
 - Winner is determined by total chips won across all hands
-- Each bot has 7 minutes total wall clock time bank per match
+- Each bot's time bank depends on their qualification status:
+  - Standard: 1500 seconds total wall clock time bank per match
+  - Qualified: 2000 seconds total wall clock time bank per match (after beating ProbabilityAgent)
 - Exceeding total time bank results in match loss
 - No per-move time limit is enforced
 - No maximum bet size restriction
@@ -121,7 +122,7 @@ The Competition consists of multiple phases with different participation require
 ### Age and Education Status
 
 - Be at least 18 years old at the time of registration
-- Be currently enrolled as an active student at a whitelisted U.S. university in any of the following programs:
+- Be currently enrolled as an active student at an accredited U.S. university in any of the following programs:
   - Undergraduate degree program (full-time or part-time)
   - Graduate degree program (full-time or part-time)
   - Doctoral program
@@ -136,7 +137,7 @@ The Competition consists of multiple phases with different participation require
 - Teams must consist of either one (1) or two (2) eligible Participants
 - All team members must independently meet all eligibility requirements
 - Each Participant may be a member of only one (1) team during the Competition Period
-- Team members may be from different whitelisted universities
+- Team members may be from different universities
 - Teams must register through <https://aipoker.cmudsc.com> using university email addresses
 - One team member initiates team creation and invites teammate
 - Both members must confirm team formation
@@ -148,18 +149,11 @@ The Competition consists of multiple phases with different participation require
 - Team dissolution results in forfeiture of all matches and rankings
 - Teams may not merge or split during the Competition
 
-### University Requirements
-
-- Must be enrolled at a university on CMU's approved whitelist
-- Current whitelist is available at <https://poker.cmudsc.com/eligible-schools>
-- Universities may be added to the whitelist during the Competition Period
-- Once a university is on the whitelist, it will remain eligible for the entire Competition Period
-
 ### Account Registration
 
 - Must create and maintain a valid account on <https://aipoker.cmudsc.com>
 - Must register using an active .edu email address from their enrolled institution
-- Must verify their email address and student status through the platform
+- Must verify their email address through the platform
 
 ### International Student Eligibility
 
@@ -223,10 +217,18 @@ The Competition consists of two distinct phases with different determination cri
 
 ### Computational Resources
 
-- Each bot shall be strictly limited to:
-  - One (1) vCPU core
-  - Two (2) GB RAM
-  - One (1) GB disk space
+- Bot resources are determined by qualification status:
+  - Standard Resources (Before beating ProbabilityAgent):
+    - Two (2) vCPU cores
+    - Four (4) GB RAM
+    - One (1) GB disk space
+    - 1500 seconds time bank
+  - Enhanced Resources (After beating ProbabilityAgent):
+    - Eight (8) vCPU cores
+    - Sixteen (16) GB RAM
+    - One (1) GB disk space
+    - 2000 seconds time bank
+- All bots have:
   - No external network access during matches
   - No GPU access
 - Maximum bot file size: 3GB (including all dependencies)
