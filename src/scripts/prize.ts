@@ -83,7 +83,7 @@ export function initializePrize () {
   };
 
   let clickCount = 0;
-  let currentPrize = 100000;
+  let currentPrize = 6000;
   let isSpinning = false;
 
   // Update initial display with formatting
@@ -143,11 +143,11 @@ export function initializePrize () {
             animatePrizeIncrease(
               elements.prizeValue,
               currentPrize,
-              100000,
+              6000,
               winSoundDuration
             );
 
-            currentPrize += 100000;
+            currentPrize += 6000;
             elements.prizeValue.classList.add("prize-increase");
             setTimeout(() => elements.prizeValue!.classList.remove("prize-increase"), winSoundDuration);
           }
