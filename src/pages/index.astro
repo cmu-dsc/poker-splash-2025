@@ -35,8 +35,9 @@ const alumni = alumniData.data;
 		<title>CMU AI Poker Tournament</title>
 		<SEO
 			title="CMU AI Poker Tournament"
-			description="Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent. Hosted by CMU Data Science Club."
+			description="Build an AI poker agent and compete for $6,000 in prizes. Test your skills in machine learning and game theory against other university students. Hosted by CMU Data Science Club."
 		/>
+
 
 		<!-- Additional Meta Tags -->
 		<meta
@@ -52,7 +53,7 @@ const alumni = alumniData.data;
 				"@context": "https://schema.org",
 				"@type": "Event",
 				"name": "CMU AI Poker Tournament",
-				"description": "Build an AI poker agent and compete for $100,000 in prizes. Test your skills in machine learning and game theory against top university talent.",
+				"description": "Build an AI poker agent and compete for $6,000 in prizes. Test your skills in machine learning and game theory against other university students.",
 				"location": {
 					"@type": "Place",
 					"name": "Jump Trading Chicago Office",
@@ -112,7 +113,7 @@ const alumni = alumniData.data;
 						<h1
 							class="font-outfit font-bold text-5xl md:text-[3.5rem] text-primary tracking-[-0.02em] m-0"
 						>
-							CMU Intercollegiate AI Poker Tournament
+							CMU AI Poker Tournament
 						</h1>
 						<div
 							class="font-space-grotesk text-2xl sm:text-3xl md:text-4xl tracking-[0.5rem] sm:tracking-[1rem] font-medium my-4"
@@ -153,12 +154,13 @@ const alumni = alumniData.data;
 						</div>
 
 						<div class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-[rgba(255,51,51,0.3)] shadow-lg mt-8 max-w-2xl mx-auto text-center">
-							<h3 class="text-[#FF3333] text-xl font-semibold mb-2">⚠️ Competition Postponed</h3>
+							<h3 class="text-[#FF3333] text-xl font-semibold mb-2">National Round Postponed</h3>
 							<p class="text-white/90 text-lg">
-								The AI Poker Tournament has been postponed. New dates will be announced soon. Please join our Discord for updates.
+								The national round has been postponed. Please join our Discord for updates.
 							</p>
 						</div>
 					</div>
+
 				</div>
 			</section>
 
@@ -167,10 +169,11 @@ const alumni = alumniData.data;
 					<div class="about-header">
 						<h2>About the Competition</h2>
 						<p class="lead">
-							Build an AI poker agent and compete for $100,000 in prizes. Test
-							your skills in machine learning and game theory against top
-							university talent.
+							Build an AI poker agent and compete for $6,000 in prizes. Test
+							your skills in machine learning and game theory against other
+							university students.
 						</p>
+
 					</div>
 
 					<div class="features-grid">
@@ -186,8 +189,7 @@ const alumni = alumniData.data;
 						<div class="feature-card">
 							<h3 class="feature-title">Hybrid Format</h3>
 							<p class="feature-description">
-								Compete online during the main competition and advance to the
-								finals at Jump Trading's Chicago headquarters. Full development
+								Compete online during the main competition. Full development
 								support and documentation provided throughout the competition.
 							</p>
 						</div>
@@ -229,7 +231,7 @@ const alumni = alumniData.data;
 					<h2>Prize Pool</h2>
 					<div class="prize-box" id="prize-box">
 						<div class="prize-amount">
-							$<span id="prize-value">100,000</span>
+							$<span id="prize-value">6,000</span>
 						</div>
 						<div class="total-text">Total Prize Pool</div>
 					</div>
@@ -262,9 +264,8 @@ const alumni = alumniData.data;
 						<div class="rule-box">
 							<h3>Eligibility</h3>
 							<ul>
-								<li>Open to all U.S. university students</li>
+								<li>Open to all CMU students</li>
 								<li>Teams of up to 2 members allowed</li>
-								<li>Teams can include members from different schools</li>
 							</ul>
 						</div>
 						<div class="rule-box">
@@ -293,11 +294,16 @@ const alumni = alumniData.data;
 									Teams play matches automatically throughout the day during the
 									online phase
 								</li>
-								<li>Top 10 teams advance to in-person finals</li>
-								<li>Finals held at Jump Trading's Chicago offices</li>
+								<li>
+									Match requests can be made to higher elo opponents
+								</li>
+								<li>
+									Teams with the highest elo win the competition
+								</li>
 							</ul>
 						</div>
 					</div>
+
 				</div>
 			</section>
 
@@ -306,7 +312,7 @@ const alumni = alumniData.data;
 					<h2>Competition Timeline</h2>
 					<div class="timeline">
 						<div class="timeline-item">
-							<div class="timeline-date">TBA</div>
+							<div class="timeline-date">Feb. 10</div>
 							<div class="timeline-card">
 								<h3>Registration Opens</h3>
 								<p>
@@ -317,50 +323,63 @@ const alumni = alumniData.data;
 						</div>
 
 						<div class="timeline-item">
-							<div class="timeline-date">TBA</div>
+							<div class="timeline-date">Mar. 19</div>
 							<div class="timeline-card">
-								<h3>Online Phase Begins</h3>
+								<h3>Monte Carlo Workshop</h3>
+
+								<p>
+									Learn about Monte Carlo tree search and other poker algorithms to prepare for the competition.
+								</p>
+
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-date">Mar. 21</div>
+							<div class="timeline-card">
+								<h3>Poker/Game Theory Workshop</h3>
+
+								<p>
+									Learn about poker and game theory to prepare for the competition.
+								</p>
+							</div>
+						</div>
+
+
+						<div class="timeline-item">
+							<div class="timeline-date">Mar. 22</div>
+							<div class="timeline-card">
+								<h3>Competition Begins</h3>
 								<p>
 									Access to the variant, competition framework, and
-									documentation. Weekly office hours begin.
+									documentation announced at the opening ceremony. Office hours begin.
 								</p>
 							</div>
 						</div>
 
 						<div class="timeline-item">
-							<div class="timeline-date">TBA</div>
+							<div class="timeline-date">Mar. 28</div>
 							<div class="timeline-card">
-								<h3>Online Phase Ends</h3>
+								<h3>Competition Ends</h3>
 								<p>
-									All teams must submit their final AI agents by midnight EST.
+									All teams must submit their final AI agents by 11:59 PM Mar. 28 EST.
 								</p>
 							</div>
 						</div>
 
 						<div class="timeline-item">
-							<div class="timeline-date">TBA</div>
+							<div class="timeline-date">Mar. 29</div>
 							<div class="timeline-card">
-								<h3>Semi-Finals Ceremony</h3>
+								<h3>Closing Ceremony</h3>
 								<p>
-									Winners are selected and invited to in-person Finals. Matches
-									will be live-streamed and select prizes will be given out.
-								</p>
-							</div>
-						</div>
-
-						<div class="timeline-item">
-							<div class="timeline-date">TBA</div>
-							<div class="timeline-card">
-								<h3>In-Person Finals</h3>
-								<p>
-									Finalists arrive at Jump's offices and build bots for the
-									final variant.
+									Winners are announced at the closing ceremony.
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+
 
 			<section class="bg-[#222] py-16 px-8">
 				<div class="max-w-[1000px] mx-auto">
@@ -400,7 +419,7 @@ const alumni = alumniData.data;
 								>
 							</summary>
 							<p class="mt-4 text-white/90 leading-relaxed">
-								Teams can be between 1 and 2 people from any U.S. university.
+								Teams can be between 1 and 2 CMU students.
 							</p>
 						</details>
 
@@ -419,9 +438,10 @@ const alumni = alumniData.data;
 							<p class="mt-4 text-white/90 leading-relaxed">
 								The specific poker variant will be revealed when the competition
 								starts. It will be more complex than standard no-limit Texas
-								Hold 'em. The finals will feature a slightly different variant.
+								Hold 'em.
 							</p>
 						</details>
+
 
 						<details
 							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
@@ -436,9 +456,7 @@ const alumni = alumniData.data;
 								>
 							</summary>
 							<p class="mt-4 text-white/90 leading-relaxed">
-								The exact prize pool is still being finalized, but in total,
-								$100,000 will be split between finalists. Stay tuned for prize
-								announcements!
+								The prize pool will be $3,000 for first place, $2,000 for second place, and $1,000 for third place.
 							</p>
 						</details>
 
@@ -487,39 +505,16 @@ const alumni = alumniData.data;
 							<summary
 								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
 							>
-								How does the online phase work?
+								How does matchmaking work?
 								<span
 									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
 									>+</span
 								>
 							</summary>
 							<p class="mt-4 text-white/90 leading-relaxed">
-								During the online portion, matches will be run continuously with
-								approximately 20 matches per day per team. The matchmaking
-								system is TBD. Teams can request a limited number of additional
-								matches against specific opponents each day.
-							</p>
-						</details>
-
-						<details
-							class="bg-gradient-to-br from-[#2a2a2a] to-[#222] rounded-xl p-6 border border-white/10 shadow-lg hover:from-[#2d2d2d] hover:to-[#252525] transition-colors group"
-						>
-							<summary
-								class="text-lg font-medium text-primary hover:text-primary-hover cursor-pointer pr-8 relative list-none"
-							>
-								What happens at the finals?
-								<span
-									class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-primary transition-transform group-open:rotate-45"
-									>+</span
-								>
-							</summary>
-							<p class="mt-4 text-white/90 leading-relaxed">
-								The finals will be a 2 day in-person event at Jump Trading's
-								offices in Chicago. Teams will compete in a round-robin format
-								using a slightly modified variant of the game, with final
-								rankings determined by overall winrate. Finalists will also have
-								the chance to network with Jump traders, quants, engineers, and
-								recruiters, and attend cool talks and social events.
+								Matches will be run continuously with
+								approximately 20 matches per day per team. Teams can request a limited number of additional
+								matches against higher elo opponents each day.
 							</p>
 						</details>
 
@@ -556,7 +551,7 @@ const alumni = alumniData.data;
 							</summary>
 							<p class="mt-4 text-white/90 leading-relaxed">
 								We provide a complete development framework, documentation,
-								example bots, and weekly office hours with the organizing team.
+								example bots, and office hours with the organizing team.
 								You'll also have access to our Discord community for support.
 							</p>
 						</details>
