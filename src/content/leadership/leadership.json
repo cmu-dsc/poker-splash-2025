@@ -46,41 +46,5 @@
     "image": "../../assets/team/varr.jpeg",
     "github": "https://github.com/varrkumar",
     "linkedin": "https://www.linkedin.com/in/varrkumar"
-  },
-  {
-    "name": "Juny Kim",
-    "role": "Operations Director",
-    "image": "../../assets/team/juny.png",
-    "github": "https://github.com/jkim999",
-    "linkedin": "https://www.linkedin.com/in/junykim1"
-  },
-  {
-    "name": "Dongkyun Kim",
-    "role": "DSC Advisory Board",
-    "image": "../../assets/team/dk.jpg",
-    "github": "https://github.com/dongkyunk",
-    "linkedin": "https://www.linkedin.com/in/dongkyun-k"
-  },
-  {
-    "name": "Jei Park",
-    "role": "DSC Advisory Board",
-    "image": "../../assets/team/jei.png",
-    "github": "https://github.com/jeih",
-    "linkedin": "https://www.linkedin.com/in/jehyo-jei-park"
-  },
-  {
-    "name": "Al Hassan",
-    "role": "DSC Advisory Board",
-    "image": "../../assets/team/al.png",
-    "github": "https://github.com/almutwakel",
-    "linkedin": "https://www.linkedin.com/in/almutwakel"
-
-  },
-  {
-    "name": "Clement Ou",
-    "role": "DSC Advisory Board",
-    "image": "../../assets/team/clement.jpg",
-    "github": "https://github.com/clementou",
-    "linkedin": "https://linkedin.com/in/clementou"
   }
 ]
