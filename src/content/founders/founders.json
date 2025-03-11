@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Clement Ou",
+        "role": "Founder, Competitions Lead '24, '25",
+        "image": "../../assets/team/clement.jpg",
+        "github": "https://github.com/clementou",
+        "linkedin": "https://linkedin.com/in/clementou"
+      },
+      {
+        "name": "Al Hassan",
+        "role": "Founder, DSC President '24, '25",
+        "image": "../../assets/team/al.png",
+        "github": "https://github.com/almutwakel",
+        "linkedin": "https://www.linkedin.com/in/almutwakel"
+      }
+]

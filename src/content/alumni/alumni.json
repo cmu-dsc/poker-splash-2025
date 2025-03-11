@@ -1,26 +1,5 @@
 [
   {
-    "name": "Clement Ou",
-    "role": "Competitions Director '24, '25",
-    "image": "../../assets/team/clement.jpg",
-    "github": "https://github.com/clementou",
-    "linkedin": "https://linkedin.com/in/clementou"
-  },
-  {
-    "name": "Al Hassan",
-    "role": "DSC President '24, '25",
-    "image": "../../assets/team/al.png",
-    "github": "https://github.com/almutwakel",
-    "linkedin": "https://www.linkedin.com/in/almutwakel"
-  },
-  {
-    "name": "Dongkyun Kim",
-    "role": "Poker Lead '24, '25",
-    "image": "../../assets/team/dk.jpg",
-    "github": "https://github.com/dongkyunk",
-    "linkedin": "https://www.linkedin.com/in/dongkyun-k"
-  },
-  {
     "name": "Emily Yu",
     "role": "Project Manager '24, '25",
     "image": "../../assets/team/emily.png",
@@ -28,22 +7,8 @@
     "linkedin": "https://www.linkedin.com/in/emily-yu-a28148204"
   },
   {
-    "name": "Juny Kim",
-    "role": "Operations Director '24, '25",
-    "image": "../../assets/team/juny.png",
-    "github": "https://github.com/jkim999",
-    "linkedin": "https://www.linkedin.com/in/junykim1"
-  },
-  {
-    "name": "Jei Park",
-    "role": "Branding Director '24, '25",
-    "image": "../../assets/team/jei.png",
-    "github": "https://github.com/jeih",
-    "linkedin": "https://www.linkedin.com/in/jehyo-jei-park"
-  },
-  {
     "name": "Shiva Oswal",
-    "role": "Education Director '24",
+    "role": "Education Lead '24",
     "image": "../../assets/alumni/shiva.png",
     "github": "https://github.com/Agnimandur",
     "linkedin": "https://www.linkedin.com/in/shivaoswal"
@@ -63,7 +28,7 @@
   },
   {
     "name": "Suha Niyas",
-    "role": "Design Director '24",
+    "role": "Design Lead '24",
     "image": "../../assets/alumni/suha.jpg",
     "linkedin": "https://www.linkedin.com/in/suha-niyas"
   },

@@ -23,8 +23,14 @@ const alumniCollection = defineCollection({
   schema: memberSchema
 });
 
+const foundersCollection = defineCollection({
+  type: 'data',
+  schema: memberSchema
+});
+
 export const collections = {
   'leadership': leadershipCollection,
   'developers': developersCollection,
   'alumni': alumniCollection,
+  'founders': foundersCollection
 };

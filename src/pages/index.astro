@@ -19,10 +19,12 @@ import "../styles/sections/timeline.css";
 
 const [leadershipData] = await getCollection("leadership");
 const [developersData] = await getCollection("developers");
+const [founderData] = await(getCollection("founders"));
 const [alumniData] = await getCollection("alumni");
 
 const leadership = leadershipData.data;
 const developers = developersData.data;
+const founders = founderData.data;
 const alumni = alumniData.data;
 ---
 
@@ -555,6 +557,13 @@ const alumni = alumniData.data;
 				<h2>Developers</h2>
 				<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
 					{developers.map((member) => <TeamMember member={member} />)}
+				</div>
+			</section>
+
+			<section>
+				<h2>Founders</h2>
+				<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
+					{founders.map((member) => <TeamMember member={member} />)}
 				</div>
 			</section>
 
