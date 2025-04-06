@@ -19,7 +19,7 @@ import "../styles/sections/timeline.css";
 
 const [leadershipData] = await getCollection("leadership");
 const [developersData] = await getCollection("developers");
-const [founderData] = await(getCollection("founders"));
+const [founderData] = await getCollection("founders");
 const [alumniData] = await getCollection("alumni");
 
 const leadership = leadershipData.data;
@@ -55,6 +55,8 @@ const alumni = alumniData.data;
 				"@type": "Event",
 				"name": "CMU AI Poker Tournament",
 				"description": "Build an AI poker agent and compete for $6,000 in prizes. Test your skills in machine learning and game theory against other university students.",
+				"startDate": "2025-03-22",
+				"endDate": "2025-03-29",
 				"location": {
 					"@type": "Place",
 					"name": "Jump Trading Chicago Office",
