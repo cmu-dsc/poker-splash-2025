@@ -36,9 +36,9 @@ function createMoneyParticle (x: number, y: number) {
 }
 
 const AUDIO = {
-  SPIN: new Audio('/sounds/slot-spin.mp3'),
-  WIN: new Audio('/sounds/slot-win.mp3'),
-  LEVER: new Audio('/sounds/lever-pull.flac'),
+  SPIN: new Audio('https://poker-splash-2025.netlify.app/sounds/slot-spin.mp3'),
+  WIN: new Audio('https://poker-splash-2025.netlify.app/sounds/slot-win.mp3'),
+  LEVER: new Audio('https://poker-splash-2025.netlify.app/sounds/lever-pull.flac'),
 };
 
 // Initialize audio settings
